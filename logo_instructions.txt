@@ -1,0 +1,35 @@
+LOGO SETUP INSTRUCTIONS
+========================
+
+The logo has been integrated into the website. Here's what you need to do:
+
+1. SAVE THE LOGO IMAGE:
+   - Save the DohaNordic logo image you provided as: logo.png
+   - Place it in the main project directory: /home/user/qatarhoda/logo.png
+   - Recommended size: 500x500px or larger (will be auto-resized)
+
+2. LOGO APPEARS IN:
+   ✓ Top center of all pages (50px height, auto-scales on hover)
+   ✓ Browser tab favicon (16x16, 32x32, 180x180 sizes)
+   ✓ Apple touch icon (for iOS devices)
+   ✓ Gradient text "NordCloud Qatar" appears next to logo on desktop
+
+3. LOGO FEATURES:
+   - Cyan glow effect matching site theme
+   - Hover animation (glows brighter, scales up 5%)
+   - Links back to homepage
+   - Responsive: logo only on mobile, logo + text on desktop
+   - Fixed position at top center
+
+4. IF YOU DON'T HAVE THE PNG FILE:
+   Option A: Convert the image you uploaded to PNG format
+   Option B: I can create a simple SVG version if needed
+
+5. ALTERNATIVE: Use online converter
+   - Go to: https://image.online-convert.com/convert-to-png
+   - Upload your logo image
+   - Download as PNG
+   - Rename to "logo.png"
+   - Place in project root
+
+Let me know if you need help converting the image or want me to create an SVG version!

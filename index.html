@@ -7,6 +7,11 @@
     <meta name="description" content="Norwegian-founded Microsoft 365 consulting in Qatar. Expert Intune, Autopilot, Defender XDR deployment for enterprises, schools & clinics in Doha. Bilingual Arabic-English support. استشارات مايكروسوفت 365 نرويجية التأسيس في قطر. خبراء نشر إنتيون وأوتوبايلوت وديفيندر XDR للمؤسسات والمدارس والعيادات في الدوحة. دعم ثنائي اللغة عربي-إنجليزي.">
     <meta name="keywords" content="Microsoft 365 Qatar, Intune Qatar, Autopilot Qatar, Defender XDR Qatar, Microsoft cloud consulting Qatar, M365 services Doha, Azure Qatar, مايكروسوفت 365 قطر, إنتيون قطر, أوتوبايلوت قطر, ديفيندر XDR قطر, استشارات سحابية مايكروسوفت قطر, خدمات M365 الدوحة, أزور قطر">
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="logo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="logo.png">
+
     <!-- Canonical URL -->
     <link rel="canonical" href="https://nordcloud.qa">
 
@@ -276,6 +281,47 @@
         .lang-switch span.active {
             color: var(--neon-cyan);
             text-shadow: 0 0 10px rgba(0, 240, 255, 0.8);
+        }
+
+        /* ===== LOGO ===== */
+        .site-logo {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .site-logo img {
+            height: 50px;
+            width: auto;
+            filter: drop-shadow(0 0 10px rgba(0, 240, 255, 0.3));
+            transition: all 0.3s ease;
+        }
+
+        .site-logo:hover img {
+            filter: drop-shadow(0 0 20px rgba(0, 240, 255, 0.6));
+            transform: scale(1.05);
+        }
+
+        .site-logo .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .site-logo .logo-text {
+                display: block;
+            }
         }
 
         /* ===== HEADER / HERO ===== */
@@ -804,6 +850,12 @@
     </style>
 </head>
 <body class="en-lang">
+    <!-- Logo -->
+    <a href="index.html" class="site-logo">
+        <img src="logo.png" alt="NordCloud Qatar Logo">
+        <span class="logo-text">NordCloud Qatar</span>
+    </a>
+
     <!-- Cookie Consent Banner -->
     <div id="cookie-banner" style="display: none; position: fixed; bottom: 0; left: 0; right: 0; background: var(--bg-darker); border-top: 1px solid var(--glass-border); padding: 20px; z-index: 9999; backdrop-filter: blur(20px);">
         <div class="container" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px;">
