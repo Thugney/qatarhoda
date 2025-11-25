@@ -1,15 +1,16 @@
 # NordCloud Qatar Website
 
-Modern, bilingual (English/Arabic) landing page for Microsoft 365 consulting services in Qatar.
+Futuristic, bilingual (English/Arabic) landing page for Microsoft 365 consulting services in Qatar.
 
-## 🎨 Design Philosophy
+## 🔮 Design Philosophy
 
-This website follows a **clean, minimalist design system** focused on:
+This website features a **cutting-edge, futuristic dark mode design** focused on:
 
-- **Simplicity**: Typography-driven design with generous whitespace
-- **Professionalism**: Refined color palette and professional SVG icons
-- **Accessibility**: Full keyboard navigation, screen reader support, and WCAG compliance
-- **Performance**: Single-page HTML with optimized CSS, no external dependencies
+- **Futuristic Aesthetics**: Dark mode with neon cyan (#00F0FF) & purple (#B537FF) accents
+- **Advanced Effects**: Animated grid backgrounds, glassmorphism, and neon glow effects
+- **Bold Typography**: Space Grotesk font with gradient text and massive headings
+- **Premium Interactions**: Smooth animations, hover transformations, and ripple effects
+- **Performance**: Pure CSS animations with hardware acceleration
 - **Bilingual Excellence**: True RTL support with culturally-aware design patterns
 
 ## 🚀 Features
@@ -17,23 +18,26 @@ This website follows a **clean, minimalist design system** focused on:
 ### Design System
 
 **Color Palette**
-- Primary: `#0066FF` (Professional blue)
-- Accent: `#10B981` (Emerald for CTAs)
-- Neutrals: Gray scale from 900 to 50
-- Clean, intentional color usage throughout
+- Background: `#0A0E1A` (Deep navy/black)
+- Neon Cyan: `#00F0FF` (Primary accent)
+- Neon Purple: `#B537FF` (Secondary accent)
+- Neon Pink: `#FF3D9A` (Tertiary accent)
+- Glass effects with 5% white transparency
 
 **Typography**
-- English: Inter (400, 600, 700 weights)
+- English: Space Grotesk (futuristic geometric font)
 - Arabic: Tajawal (400, 500, 700, 800 weights)
-- Responsive font sizing with clamp()
-- Optimized line heights for readability
+- Massive headlines: up to 5.5rem (88px)
+- Gradient text effects with animated glow
+- Tight letter-spacing for tech aesthetic
 
-**Components**
-- Border-first card design
-- Subtle, layered shadows
-- Professional SVG icons (Heroicons-style)
-- Fast micro-interactions (200ms)
-- Smooth scroll animations
+**Visual Effects**
+- Animated grid background (moving techno pattern)
+- Floating gradient orbs
+- Glassmorphism cards (frosted glass + backdrop blur)
+- Neon glow shadows on hover
+- Button ripple effects
+- Smooth card lift animations (translateY + scale)
 
 ### Bilingual Support
 
@@ -93,9 +97,10 @@ qatarhoda/
 ## 🛠️ Tech Stack
 
 - **HTML5**: Semantic markup
-- **CSS3**: Custom properties (CSS variables), Grid, Flexbox
+- **CSS3**: Advanced animations, backdrop-filter, gradients, custom properties
 - **Vanilla JavaScript**: No frameworks, pure DOM API
-- **Google Fonts**: Inter (EN) + Tajawal (AR)
+- **Google Fonts**: Space Grotesk (EN) + Tajawal (AR)
+- **Pure CSS Effects**: No animation libraries, hardware-accelerated transforms
 
 ## 🎯 Target Audience
 

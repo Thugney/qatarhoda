@@ -62,13 +62,13 @@
     }
     </script>
 
-    <!-- Google Fonts (Tajawal for Arabic + Inter for English) -->
+    <!-- Google Fonts - Space Grotesk + Tajawal -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
 
     <style>
-        /* ===== CSS RESET & BASE ===== */
+        /* ===== FUTURISTIC DARK MODE DESIGN ===== */
         * {
             margin: 0;
             padding: 0;
@@ -76,81 +76,115 @@
         }
 
         :root {
-            /* Clean Color System */
-            --primary: #0066FF;
-            --primary-dark: #0052CC;
-            --primary-light: #3385FF;
-            --accent: #10B981;
-            --accent-dark: #059669;
+            /* Dark Mode Colors */
+            --bg-dark: #0A0E1A;
+            --bg-darker: #050810;
+            --bg-card: rgba(15, 23, 42, 0.6);
 
-            /* Neutral Grays */
-            --gray-900: #0F172A;
-            --gray-800: #1E293B;
-            --gray-700: #334155;
-            --gray-600: #475569;
-            --gray-500: #64748B;
-            --gray-400: #94A3B8;
-            --gray-300: #CBD5E1;
-            --gray-200: #E2E8F0;
-            --gray-100: #F1F5F9;
-            --gray-50: #F8FAFC;
+            /* Neon Accents */
+            --neon-cyan: #00F0FF;
+            --neon-purple: #B537FF;
+            --neon-pink: #FF3D9A;
+            --neon-blue: #0066FF;
 
-            /* Functional Colors */
-            --white: #FFFFFF;
-            --background: #FAFBFC;
-            --border: #E5E7EB;
+            /* Text Colors */
+            --text-primary: #FFFFFF;
+            --text-secondary: #94A3B8;
+            --text-muted: #64748B;
 
-            /* Shadows */
-            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
-            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            /* Glow Effects */
+            --glow-cyan: 0 0 20px rgba(0, 240, 255, 0.5), 0 0 40px rgba(0, 240, 255, 0.3);
+            --glow-purple: 0 0 20px rgba(181, 55, 255, 0.5), 0 0 40px rgba(181, 55, 255, 0.3);
+            --glow-pink: 0 0 20px rgba(255, 61, 154, 0.5), 0 0 40px rgba(255, 61, 154, 0.3);
+
+            /* Glass Effect */
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
 
             /* Spacing */
-            --radius: 12px;
-            --radius-lg: 16px;
-            --radius-full: 9999px;
+            --radius: 16px;
+            --radius-lg: 24px;
         }
 
         html {
             scroll-behavior: smooth;
             -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: var(--white);
-            color: var(--gray-700);
+            font-family: 'Space Grotesk', -apple-system, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
             line-height: 1.6;
-            font-size: 16px;
             overflow-x: hidden;
+            position: relative;
         }
 
         body.ar-lang {
-            font-family: 'Tajawal', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Tajawal', -apple-system, sans-serif;
             direction: rtl;
             line-height: 1.8;
+        }
+
+        /* ===== ANIMATED GRID BACKGROUND ===== */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                linear-gradient(rgba(0, 240, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 240, 255, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: 0;
+            animation: gridMove 20s linear infinite;
+        }
+
+        @keyframes gridMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        /* Gradient Orbs */
+        body::after {
+            content: '';
+            position: fixed;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(181, 55, 255, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: 0;
+            animation: float 15s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(-100px, 100px) rotate(180deg); }
+        }
+
+        /* All content above background */
+        .container, header, section, footer {
+            position: relative;
+            z-index: 1;
         }
 
         /* ===== LANGUAGE VISIBILITY ===== */
         .lang-en { display: initial; }
         .lang-ar { display: none; }
-
         body.ar-lang .lang-en { display: none; }
         body.ar-lang .lang-ar { display: initial; }
 
-        h1.lang-en, h2.lang-en, h3.lang-en, h4.lang-en,
-        p.lang-en, div.lang-en { display: block; }
-        h1.lang-ar, h2.lang-ar, h3.lang-ar, h4.lang-ar,
-        p.lang-ar, div.lang-ar { display: none; }
-
-        body.ar-lang h1.lang-en, body.ar-lang h2.lang-en,
-        body.ar-lang h3.lang-en, body.ar-lang h4.lang-en,
-        body.ar-lang p.lang-en, body.ar-lang div.lang-en { display: none; }
-        body.ar-lang h1.lang-ar, body.ar-lang h2.lang-ar,
-        body.ar-lang h3.lang-ar, body.ar-lang h4.lang-ar,
-        body.ar-lang p.lang-ar, body.ar-lang div.lang-ar { display: block; }
+        h1.lang-en, h2.lang-en, h3.lang-en, h4.lang-en, p.lang-en, div.lang-en { display: block; }
+        h1.lang-ar, h2.lang-ar, h3.lang-ar, h4.lang-ar, p.lang-ar, div.lang-ar { display: none; }
+        body.ar-lang h1.lang-en, body.ar-lang h2.lang-en, body.ar-lang h3.lang-en,
+        body.ar-lang h4.lang-en, body.ar-lang p.lang-en, body.ar-lang div.lang-en { display: none; }
+        body.ar-lang h1.lang-ar, body.ar-lang h2.lang-ar, body.ar-lang h3.lang-ar,
+        body.ar-lang h4.lang-ar, body.ar-lang p.lang-ar, body.ar-lang div.lang-ar { display: block; }
 
         li.lang-en { display: list-item; }
         li.lang-ar { display: none; }
@@ -158,55 +192,43 @@
         body.ar-lang li.lang-ar { display: list-item; }
 
         /* ===== TYPOGRAPHY ===== */
-        h1, h2, h3, h4, h5, h6 {
+        h1, h2, h3, h4 {
             font-weight: 700;
-            color: var(--gray-900);
-            line-height: 1.2;
-            letter-spacing: -0.02em;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
         }
 
         h1 {
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
-            font-weight: 700;
+            font-size: clamp(3rem, 8vw, 5.5rem);
+            background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: 1.5rem;
         }
 
         h2 {
-            font-size: clamp(2rem, 4vw, 3rem);
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            color: var(--text-primary);
             margin-bottom: 1rem;
         }
 
         h3 {
-            font-size: clamp(1.5rem, 3vw, 2rem);
-            margin-bottom: 0.75rem;
-        }
-
-        h4 {
-            font-size: 1.25rem;
-            margin-bottom: 0.5rem;
+            font-size: clamp(1.5rem, 3vw, 2.25rem);
+            color: var(--text-primary);
         }
 
         p {
-            margin-bottom: 1rem;
-            color: var(--gray-600);
-            letter-spacing: 0.01em;
-        }
-
-        .text-large {
-            font-size: 1.25rem;
+            color: var(--text-secondary);
+            font-size: 1.125rem;
             line-height: 1.7;
         }
 
-        /* ===== LAYOUT ===== */
+        /* ===== CONTAINER ===== */
         .container {
             max-width: 1280px;
             margin: 0 auto;
             padding: 0 24px;
-        }
-
-        .container-narrow {
-            max-width: 720px;
-            margin: 0 auto;
         }
 
         /* ===== LANGUAGE SWITCHER ===== */
@@ -215,18 +237,19 @@
             top: 24px;
             right: 24px;
             z-index: 1000;
-            background: var(--white);
-            border: 1px solid var(--border);
-            padding: 8px 16px;
-            border-radius: var(--radius-full);
-            box-shadow: var(--shadow-md);
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            padding: 10px 20px;
+            border-radius: 50px;
             font-weight: 600;
             font-size: 0.875rem;
             cursor: pointer;
-            transition: all 0.2s ease;
+            transition: all 0.3s ease;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
         }
 
         body.ar-lang .lang-switch {
@@ -236,272 +259,314 @@
 
         .lang-switch:hover {
             transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--gray-300);
-        }
-
-        .lang-switch:focus {
-            outline: 2px solid var(--primary);
-            outline-offset: 2px;
+            border-color: var(--neon-cyan);
+            box-shadow: var(--glow-cyan);
         }
 
         .lang-switch span {
-            color: var(--gray-500);
-            transition: color 0.2s ease;
+            color: var(--text-muted);
+            transition: color 0.3s ease;
         }
 
         .lang-switch span.active {
-            color: var(--primary);
+            color: var(--neon-cyan);
+            text-shadow: 0 0 10px rgba(0, 240, 255, 0.8);
         }
 
         /* ===== HEADER / HERO ===== */
         header {
-            background: var(--primary);
-            position: relative;
-            overflow: hidden;
-            padding: 180px 24px 120px;
-            min-height: 600px;
+            min-height: 100vh;
             display: flex;
             align-items: center;
-        }
-
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.05) 0%, transparent 50%);
-            pointer-events: none;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 180px 24px 100px;
         }
 
         .hero-content {
-            position: relative;
-            z-index: 1;
             text-align: center;
-            color: var(--white);
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
+            animation: fadeInUp 0.8s ease both;
         }
 
         .hero-content h1 {
-            color: var(--white);
-            animation: fadeInUp 0.6s ease both;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { filter: drop-shadow(0 0 20px rgba(0, 240, 255, 0.5)); }
+            to { filter: drop-shadow(0 0 40px rgba(181, 55, 255, 0.8)); }
         }
 
         .hero-content p {
-            font-size: clamp(1.125rem, 2vw, 1.375rem);
-            color: rgba(255, 255, 255, 0.95);
-            margin-bottom: 2.5rem;
-            line-height: 1.7;
-            animation: fadeInUp 0.6s ease 0.1s both;
+            font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            animation: fadeInUp 0.8s ease 0.2s both;
         }
 
         /* ===== BUTTONS ===== */
         .btn-group {
             display: flex;
             flex-wrap: wrap;
-            gap: 16px;
+            gap: 20px;
             justify-content: center;
-            animation: fadeInUp 0.6s ease 0.2s both;
+            animation: fadeInUp 0.8s ease 0.4s both;
         }
 
         .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
-            padding: 14px 32px;
-            border-radius: var(--radius-full);
+            gap: 10px;
+            padding: 18px 40px;
+            border-radius: 50px;
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 1.05rem;
             text-decoration: none;
-            transition: all 0.2s ease;
+            transition: all 0.3s ease;
             border: 2px solid transparent;
             cursor: pointer;
-            white-space: nowrap;
+            position: relative;
+            overflow: hidden;
         }
 
-        .btn:focus {
-            outline: 2px solid var(--white);
-            outline-offset: 2px;
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
         }
 
-        .btn-primary {
-            background: var(--white);
-            color: var(--primary);
+        .btn:hover::before {
+            width: 300px;
+            height: 300px;
         }
 
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        .btn-neon {
+            background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
+            color: var(--bg-dark);
+            box-shadow: 0 8px 32px rgba(0, 240, 255, 0.4);
+            font-weight: 700;
         }
 
-        .btn-primary:active {
-            transform: translateY(0) scale(0.98);
+        .btn-neon:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--glow-cyan), var(--glow-purple);
         }
 
-        .btn-accent {
-            background: var(--accent);
-            color: var(--white);
+        .btn-glass {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 2px solid var(--glass-border);
+            color: var(--text-primary);
         }
 
-        .btn-accent:hover {
-            background: var(--accent-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 12px 24px rgba(16, 185, 129, 0.25);
-        }
-
-        .btn-accent:active {
-            transform: translateY(0) scale(0.98);
+        .btn-glass:hover {
+            border-color: var(--neon-cyan);
+            box-shadow: var(--glow-cyan);
+            transform: translateY(-4px);
         }
 
         .btn-outline {
             background: transparent;
-            color: var(--white);
-            border: 2px solid rgba(255, 255, 255, 0.5);
+            border: 2px solid var(--neon-purple);
+            color: var(--neon-purple);
         }
 
         .btn-outline:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: var(--white);
-        }
-
-        .btn-outline-dark {
-            background: transparent;
-            color: var(--primary);
-            border: 2px solid var(--primary);
-        }
-
-        .btn-outline-dark:hover {
-            background: var(--primary);
-            color: var(--white);
+            background: var(--neon-purple);
+            color: var(--bg-dark);
+            box-shadow: var(--glow-purple);
+            transform: translateY(-4px);
         }
 
         /* ===== SECTIONS ===== */
         section {
             padding: 120px 24px;
+            position: relative;
         }
 
         .section-header {
             text-align: center;
-            max-width: 720px;
+            max-width: 800px;
             margin: 0 auto 80px;
         }
 
-        .section-header p {
-            font-size: 1.125rem;
-            color: var(--gray-600);
-            margin-top: 1rem;
+        .section-header h2 {
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
         }
 
-        /* ===== FEATURES SECTION ===== */
-        .features {
-            background: var(--background);
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--neon-cyan), var(--neon-purple));
+            border-radius: 2px;
+            box-shadow: var(--glow-cyan);
         }
 
+        /* ===== FEATURES GRID ===== */
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 48px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
         }
 
         .feature-card {
-            text-align: center;
-            padding: 48px 32px;
-            background: var(--white);
-            border: 1px solid var(--border);
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
             border-radius: var(--radius-lg);
-            transition: all 0.2s ease;
+            padding: 48px 36px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--neon-cyan), var(--neon-purple));
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
         }
 
         .feature-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-xl);
-            border-color: var(--gray-300);
+            transform: translateY(-12px);
+            border-color: var(--neon-cyan);
+            box-shadow: var(--glow-cyan), 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
         }
 
         .feature-icon {
-            width: 64px;
-            height: 64px;
+            width: 80px;
+            height: 80px;
             margin: 0 auto 24px;
-            background: var(--gray-100);
-            border-radius: var(--radius);
+            background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
+            border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: all 0.2s ease;
+            transition: all 0.4s ease;
+            position: relative;
         }
 
         .feature-card:hover .feature-icon {
-            background: var(--primary);
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: var(--glow-cyan), var(--glow-purple);
         }
 
         .feature-icon svg {
-            width: 32px;
-            height: 32px;
-            stroke: var(--gray-700);
-            transition: stroke 0.2s ease;
-        }
-
-        .feature-card:hover .feature-icon svg {
-            stroke: var(--white);
+            width: 40px;
+            height: 40px;
+            stroke: var(--bg-dark);
+            stroke-width: 2;
         }
 
         .feature-card h3 {
-            color: var(--gray-900);
-            margin-bottom: 12px;
+            margin-bottom: 16px;
+            font-size: 1.5rem;
         }
 
         .feature-card p {
-            color: var(--gray-600);
             font-size: 1rem;
             line-height: 1.6;
         }
 
         /* ===== PACKAGES SECTION ===== */
-        .packages-section {
-            background: var(--white);
-        }
-
         .packages {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 48px;
+            gap: 40px;
         }
 
         .package {
-            background: var(--white);
-            border: 2px solid var(--border);
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 2px solid var(--glass-border);
             border-radius: var(--radius-lg);
             padding: 48px 36px;
             text-align: center;
-            transition: all 0.2s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
+            overflow: hidden;
+        }
+
+        .package::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(0, 240, 255, 0.1), transparent);
+            transform: rotate(45deg);
+            transition: all 0.6s ease;
+        }
+
+        .package:hover::before {
+            left: 100%;
         }
 
         .package:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-xl);
-            border-color: var(--primary);
+            transform: translateY(-16px) scale(1.02);
+            border-color: var(--neon-purple);
+            box-shadow: var(--glow-purple), 0 30px 80px rgba(0, 0, 0, 0.4);
         }
 
         .package.featured {
-            border-color: var(--primary);
-            border-width: 2px;
+            border-color: var(--neon-cyan);
+            background: linear-gradient(135deg, rgba(0, 240, 255, 0.05), rgba(181, 55, 255, 0.05));
+        }
+
+        .package.featured::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: var(--radius-lg);
+            padding: 2px;
+            background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
         }
 
         .package-badge {
             position: absolute;
             top: 24px;
             right: 24px;
-            background: var(--primary);
-            color: var(--white);
-            padding: 6px 14px;
-            border-radius: var(--radius-full);
+            background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
+            color: var(--bg-dark);
+            padding: 8px 16px;
+            border-radius: 50px;
             font-size: 0.8125rem;
-            font-weight: 600;
+            font-weight: 700;
+            box-shadow: var(--glow-cyan);
         }
 
         body.ar-lang .package-badge {
@@ -510,23 +575,26 @@
         }
 
         .package h3 {
-            color: var(--gray-900);
-            margin-bottom: 16px;
+            margin-bottom: 20px;
+            font-size: 1.75rem;
         }
 
         .price {
-            font-size: 3rem;
-            color: var(--primary);
+            font-size: 3.5rem;
             font-weight: 700;
+            background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin: 24px 0;
-            letter-spacing: -0.03em;
+            letter-spacing: -0.04em;
         }
 
         .price-period {
-            font-size: 1rem;
-            color: var(--gray-500);
-            font-weight: 400;
             display: block;
+            font-size: 1rem;
+            color: var(--text-muted);
+            font-weight: 400;
             margin-top: 8px;
         }
 
@@ -546,18 +614,17 @@
             display: flex;
             align-items: flex-start;
             gap: 12px;
-            color: var(--gray-600);
+            color: var(--text-secondary);
             font-size: 0.9375rem;
-            line-height: 1.6;
         }
 
         .package li::before {
-            content: '';
-            width: 20px;
-            height: 20px;
+            content: '✓';
+            color: var(--neon-cyan);
+            font-weight: bold;
+            font-size: 1.25rem;
+            text-shadow: 0 0 10px rgba(0, 240, 255, 0.8);
             flex-shrink: 0;
-            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2310B981' stroke-width='3'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M5 13l4 4L19 7'/%3E%3C/svg%3E") center/contain no-repeat;
-            margin-top: 2px;
         }
 
         body.ar-lang .package li {
@@ -566,31 +633,44 @@
 
         /* ===== CTA SECTION ===== */
         .cta {
-            background: var(--gray-900);
             padding: 120px 24px;
             text-align: center;
+            position: relative;
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 240, 255, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(100px);
         }
 
         .cta-content {
             max-width: 800px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
 
         .cta h2 {
-            color: var(--white);
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
 
         .cta p {
-            color: var(--gray-300);
-            font-size: 1.125rem;
-            margin-bottom: 2.5rem;
+            font-size: 1.25rem;
+            margin-bottom: 3rem;
         }
 
         /* ===== FOOTER ===== */
         footer {
-            background: var(--gray-900);
-            color: var(--gray-300);
+            background: var(--bg-darker);
+            border-top: 1px solid var(--glass-border);
             padding: 80px 24px 40px;
         }
 
@@ -602,36 +682,37 @@
         }
 
         .footer-section h4 {
-            color: var(--white);
-            font-size: 1rem;
+            color: var(--neon-cyan);
+            font-size: 1.125rem;
             margin-bottom: 1.25rem;
+            text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
         }
 
         .footer-section p,
         .footer-section a {
-            color: var(--gray-400);
+            color: var(--text-secondary);
             text-decoration: none;
             display: block;
             margin-bottom: 0.75rem;
             font-size: 0.9375rem;
-            transition: color 0.2s ease;
+            transition: all 0.3s ease;
         }
 
         .footer-section a:hover {
-            color: var(--white);
+            color: var(--neon-cyan);
+            text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+            transform: translateX(5px);
         }
 
-        .footer-section a:focus {
-            outline: 2px solid var(--primary);
-            outline-offset: 2px;
-            border-radius: 4px;
+        body.ar-lang .footer-section a:hover {
+            transform: translateX(-5px);
         }
 
         .footer-bottom {
             text-align: center;
             padding-top: 40px;
-            border-top: 1px solid var(--gray-800);
-            color: var(--gray-500);
+            border-top: 1px solid var(--glass-border);
+            color: var(--text-muted);
             font-size: 0.875rem;
         }
 
@@ -639,7 +720,7 @@
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(30px);
             }
             to {
                 opacity: 1;
@@ -649,8 +730,8 @@
 
         .animate-on-scroll {
             opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.6s ease;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .animate-on-scroll.animated {
@@ -658,11 +739,11 @@
             transform: translateY(0);
         }
 
-        /* ===== RESPONSIVE DESIGN ===== */
+        /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
             header {
                 padding: 140px 20px 80px;
-                min-height: 500px;
+                min-height: 80vh;
             }
 
             section {
@@ -673,21 +754,8 @@
                 margin-bottom: 60px;
             }
 
-            .lang-switch {
-                top: 16px;
-                right: 16px;
-                padding: 6px 12px;
-                font-size: 0.8125rem;
-            }
-
-            body.ar-lang .lang-switch {
-                right: auto;
-                left: 16px;
-            }
-
             .btn {
                 width: 100%;
-                justify-content: center;
             }
 
             .btn-group {
@@ -697,25 +765,15 @@
             .features-grid,
             .packages {
                 grid-template-columns: 1fr;
-                gap: 32px;
+                gap: 30px;
             }
 
             .price {
                 font-size: 2.5rem;
             }
-        }
 
-        @media (max-width: 480px) {
             h1 {
-                font-size: 2rem;
-            }
-
-            h2 {
-                font-size: 1.75rem;
-            }
-
-            .container {
-                padding: 0 16px;
+                font-size: 2.5rem;
             }
         }
 
@@ -725,41 +783,24 @@
             *::before,
             *::after {
                 animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
                 transition-duration: 0.01ms !important;
             }
-        }
 
-        @media (prefers-contrast: high) {
-            :root {
-                --primary: #0052CC;
-                --border: #000000;
+            body::before,
+            body::after {
+                animation: none !important;
             }
         }
 
-        /* Focus visible for keyboard navigation */
         :focus-visible {
-            outline: 2px solid var(--primary);
-            outline-offset: 2px;
-        }
-
-        /* Print styles */
-        @media print {
-            .lang-switch,
-            .btn {
-                display: none;
-            }
-
-            header {
-                background: none;
-                color: black;
-            }
+            outline: 2px solid var(--neon-cyan);
+            outline-offset: 4px;
         }
     </style>
 </head>
 <body class="en-lang">
     <!-- Language Switcher -->
-    <div class="lang-switch" onclick="toggleLanguage()" role="button" tabindex="0" aria-label="Language Switcher" onkeypress="if(event.key==='Enter')toggleLanguage()">
+    <div class="lang-switch" onclick="toggleLanguage()" role="button" tabindex="0" aria-label="Language Switcher">
         <span class="switch-en active">EN</span>
         <span>|</span>
         <span class="switch-ar">AR</span>
@@ -769,27 +810,29 @@
     <header>
         <div class="container">
             <div class="hero-content">
-                <h1 class="lang-en">Microsoft 365 Consulting for Qatar</h1>
-                <h1 class="lang-ar">استشارات مايكروسوفت 365 في قطر</h1>
+                <h1 class="lang-en">Microsoft 365<br>Reimagined for Qatar</h1>
+                <h1 class="lang-ar">مايكروسوفت 365<br>معاد تصوره لقطر</h1>
 
                 <p class="lang-en">
-                    Expert Intune, Autopilot & Defender XDR implementation for Doha's international schools and medical clinics. Nordic precision, Arabic support.
+                    Next-gen Intune, Autopilot & Defender XDR deployment<br>
+                    Futuristic security. Nordic precision. Arabic fluency.
                 </p>
                 <p class="lang-ar">
-                    تنفيذ احترافي لإنتيون وأوتوبايلوت وديفيندر XDR للمدارس الدولية والعيادات الطبية في الدوحة. دقة نرويجية، دعم عربي كامل.
+                    نشر من الجيل التالي لإنتيون وأوتوبايلوت وديفيندر XDR<br>
+                    أمان مستقبلي. دقة نرويجية. طلاقة عربية.
                 </p>
 
                 <div class="btn-group">
-                    <a href="https://wa.me/974XXXXXXXX" class="btn btn-accent" aria-label="WhatsApp">
+                    <a href="https://wa.me/974XXXXXXXX" class="btn btn-neon">
                         <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.149-.67.149-.197.297-.767.966-.94 1.164-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.123-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
                         </svg>
-                        <span class="lang-en">WhatsApp</span>
-                        <span class="lang-ar">واتساب</span>
+                        <span class="lang-en">Launch Project</span>
+                        <span class="lang-ar">ابدأ المشروع</span>
                     </a>
-                    <a href="tel:+974XXXXXXXX" class="btn btn-primary">
-                        <span class="lang-en">Call: +974 XXXX XXXX</span>
-                        <span class="lang-ar">اتصل: +974 XXXX XXXX</span>
+                    <a href="tel:+974XXXXXXXX" class="btn btn-glass">
+                        <span class="lang-en">+974 XXXX XXXX</span>
+                        <span class="lang-ar">+974 XXXX XXXX</span>
                     </a>
                 </div>
             </div>
@@ -800,59 +843,59 @@
     <section class="features">
         <div class="container">
             <div class="section-header">
-                <h2 class="lang-en">Why NordCloud Qatar</h2>
-                <h2 class="lang-ar">لماذا نوركلاود قطر</h2>
-                <p class="lang-en">Nordic-quality Microsoft 365 consulting designed for Qatar's unique needs</p>
-                <p class="lang-ar">استشارات مايكروسوفت 365 بجودة نرويجية مصممة لاحتياجات قطر الفريدة</p>
+                <h2 class="lang-en">Engineered for Excellence</h2>
+                <h2 class="lang-ar">هندسة من أجل التميز</h2>
+                <p class="lang-en">Premium Microsoft 365 transformation powered by Nordic innovation</p>
+                <p class="lang-ar">تحول مايكروسوفت 365 الممتاز مدعوم بالابتكار النرويجي</p>
             </div>
 
             <div class="features-grid animate-on-scroll">
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
-                        </svg>
-                    </div>
-                    <h3 class="lang-en">Full Arabic Support</h3>
-                    <h3 class="lang-ar">دعم عربي كامل</h3>
-                    <p class="lang-en">Bilingual documentation, training, and support for seamless communication</p>
-                    <p class="lang-ar">وثائق وتدريب ودعم ثنائي اللغة لتواصل سلس</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-                        </svg>
-                    </div>
-                    <h3 class="lang-en">Nordic Security Standards</h3>
-                    <h3 class="lang-ar">معايير أمان نرويجية</h3>
-                    <p class="lang-en">European-grade security and compliance for Qatar's regulated industries</p>
-                    <p class="lang-ar">أمان وامتثال بمعايير أوروبية للصناعات المنظمة في قطر</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5">
+                        <svg fill="none" viewBox="0 0 24 24" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
                         </svg>
                     </div>
-                    <h3 class="lang-en">Rapid Deployment</h3>
-                    <h3 class="lang-ar">نشر سريع</h3>
-                    <p class="lang-en">100% remote delivery with 48-hour project kick-off for schools & clinics</p>
-                    <p class="lang-ar">تسليم عن بُعد 100% مع بدء المشروع خلال 48 ساعة للمدارس والعيادات</p>
+                    <h3 class="lang-en">Hyper-Speed Deployment</h3>
+                    <h3 class="lang-ar">نشر فائق السرعة</h3>
+                    <p class="lang-en">Zero-touch Autopilot enrollment in 48 hours. Enterprise-grade, startup speed.</p>
+                    <p class="lang-ar">تسجيل أوتوبايلوت بدون لمس في 48 ساعة. على مستوى المؤسسات، بسرعة الشركات الناشئة.</p>
                 </div>
 
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5">
+                        <svg fill="none" viewBox="0 0 24 24" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                        </svg>
+                    </div>
+                    <h3 class="lang-en">Zero-Trust Security</h3>
+                    <h3 class="lang-ar">أمان Zero-Trust</h3>
+                    <p class="lang-en">Military-grade Defender XDR architecture. Compliance-ready for Qatar regulations.</p>
+                    <p class="lang-ar">بنية ديفيندر XDR من الدرجة العسكرية. جاهز للامتثال للوائح قطر.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg fill="none" viewBox="0 0 24 24" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
+                        </svg>
+                    </div>
+                    <h3 class="lang-en">True Bilingual</h3>
+                    <h3 class="lang-ar">ثنائي اللغة حقيقي</h3>
+                    <p class="lang-en">Native Arabic & English expertise. No barriers, no translation delays.</p>
+                    <p class="lang-ar">خبرة أصلية بالعربية والإنجليزية. لا حواجز، لا تأخير في الترجمة.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg fill="none" viewBox="0 0 24 24" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" />
                         </svg>
                     </div>
-                    <h3 class="lang-en">Fixed-Price Packages</h3>
-                    <h3 class="lang-ar">باقات بأسعار ثابتة</h3>
-                    <p class="lang-en">Transparent pricing with clear deliverables—no hourly billing surprises</p>
-                    <p class="lang-ar">أسعار شفافة مع نتائج واضحة - بدون مفاجآت الفوترة بالساعة</p>
+                    <h3 class="lang-en">Fixed Pricing</h3>
+                    <h3 class="lang-ar">أسعار ثابتة</h3>
+                    <p class="lang-en">Transparent packages. Predictable budgets. No hourly surprises.</p>
+                    <p class="lang-ar">باقات شفافة. ميزانيات متوقعة. بدون مفاجآت بالساعة.</p>
                 </div>
             </div>
         </div>
@@ -862,88 +905,91 @@
     <section id="packages" class="packages-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="lang-en">Service Packages</h2>
-                <h2 class="lang-ar">باقات الخدمات</h2>
-                <p class="lang-en">Fixed-price Microsoft 365 solutions for Qatar organizations</p>
-                <p class="lang-ar">حلول مايكروسوفت 365 بأسعار ثابتة للمؤسسات القطرية</p>
+                <h2 class="lang-en">Transformation Packages</h2>
+                <h2 class="lang-ar">باقات التحول</h2>
+                <p class="lang-en">Enterprise-grade solutions with startup agility</p>
+                <p class="lang-ar">حلول على مستوى المؤسسات بمرونة الشركات الناشئة</p>
             </div>
 
             <div class="packages animate-on-scroll">
                 <div class="package">
-                    <h3 class="lang-en">Intune + Autopilot</h3>
-                    <h3 class="lang-ar">إنتيون + أوتوبايلوت</h3>
+                    <h3 class="lang-en">Intune Autopilot<br>Accelerator</h3>
+                    <h3 class="lang-ar">مسرّع إنتيون<br>أوتوبايلوت</h3>
                     <div class="price">
-                        50,000 QAR
-                        <span class="price-period lang-en">30 days</span>
-                        <span class="price-period lang-ar">30 يوم</span>
+                        50,000
+                        <span class="price-period">QAR</span>
                     </div>
+                    <p class="lang-en" style="color: var(--text-muted); margin-bottom: 24px;">30-day deployment</p>
+                    <p class="lang-ar" style="color: var(--text-muted); margin-bottom: 24px;">نشر 30 يوم</p>
                     <ul>
-                        <li class="lang-en">Zero-touch enrollment for 300 devices</li>
-                        <li class="lang-en">Compliance & security policies</li>
-                        <li class="lang-en">Application deployment automation</li>
-                        <li class="lang-en">Bilingual documentation & training</li>
+                        <li class="lang-en">300-device zero-touch enrollment</li>
+                        <li class="lang-en">Automated app deployment</li>
+                        <li class="lang-en">Security policy framework</li>
+                        <li class="lang-en">AR/EN training & docs</li>
 
-                        <li class="lang-ar">تسجيل بدون لمس لـ 300 جهاز</li>
-                        <li class="lang-ar">سياسات الامتثال والأمان</li>
-                        <li class="lang-ar">أتمتة نشر التطبيقات</li>
-                        <li class="lang-ar">وثائق وتدريب ثنائي اللغة</li>
+                        <li class="lang-ar">تسجيل 300 جهاز بدون لمس</li>
+                        <li class="lang-ar">نشر تطبيقات آلي</li>
+                        <li class="lang-ar">إطار سياسة الأمان</li>
+                        <li class="lang-ar">تدريب ووثائق عربي/إنجليزي</li>
                     </ul>
-                    <a href="https://wa.me/974XXXXXXXX?text=Interested%20in%20Intune%20Package" class="btn btn-outline-dark">
-                        <span class="lang-en">Get Started</span>
-                        <span class="lang-ar">ابدأ الآن</span>
+                    <a href="https://wa.me/974XXXXXXXX?text=Intune%20Package" class="btn btn-outline">
+                        <span class="lang-en">Engage</span>
+                        <span class="lang-ar">تواصل</span>
                     </a>
                 </div>
 
                 <div class="package featured">
-                    <span class="package-badge lang-en">Most Popular</span>
-                    <span class="package-badge lang-ar">الأكثر طلباً</span>
+                    <span class="package-badge lang-en">⚡ Most Advanced</span>
+                    <span class="package-badge lang-ar">⚡ الأكثر تطوراً</span>
 
-                    <h3 class="lang-en">Defender XDR Assessment</h3>
-                    <h3 class="lang-ar">تقييم ديفيندر XDR</h3>
+                    <h3 class="lang-en">Defender XDR<br>Command Center</h3>
+                    <h3 class="lang-ar">مركز قيادة<br>ديفيندر XDR</h3>
                     <div class="price">
-                        40,000 QAR
-                        <span class="price-period lang-en">21 days</span>
-                        <span class="price-period lang-ar">21 يوم</span>
+                        40,000
+                        <span class="price-period">QAR</span>
                     </div>
+                    <p class="lang-en" style="color: var(--text-muted); margin-bottom: 24px;">21-day security sprint</p>
+                    <p class="lang-ar" style="color: var(--text-muted); margin-bottom: 24px;">سباق أمني 21 يوم</p>
                     <ul>
-                        <li class="lang-en">Security baseline assessment</li>
-                        <li class="lang-en">Conditional Access design</li>
-                        <li class="lang-en">Incident response playbook</li>
-                        <li class="lang-en">Bilingual security report</li>
+                        <li class="lang-en">Full threat landscape audit</li>
+                        <li class="lang-en">AI-powered incident playbooks</li>
+                        <li class="lang-en">Zero-trust architecture</li>
+                        <li class="lang-en">Bilingual security ops</li>
 
-                        <li class="lang-ar">تقييم خط الأساس الأمني</li>
-                        <li class="lang-ar">تصميم الوصول المشروط</li>
-                        <li class="lang-ar">دليل الاستجابة للحوادث</li>
-                        <li class="lang-ar">تقرير أمني ثنائي اللغة</li>
+                        <li class="lang-ar">تدقيق كامل لمشهد التهديدات</li>
+                        <li class="lang-ar">أدلة حوادث مدعومة بالذكاء الاصطناعي</li>
+                        <li class="lang-ar">بنية Zero-Trust</li>
+                        <li class="lang-ar">عمليات أمنية ثنائية اللغة</li>
                     </ul>
-                    <a href="https://wa.me/974XXXXXXXX?text=Interested%20in%20Defender%20Package" class="btn btn-primary">
-                        <span class="lang-en">Get Started</span>
-                        <span class="lang-ar">ابدأ الآن</span>
+                    <a href="https://wa.me/974XXXXXXXX?text=Defender%20Package" class="btn btn-neon">
+                        <span class="lang-en">Deploy Now</span>
+                        <span class="lang-ar">انشر الآن</span>
                     </a>
                 </div>
 
                 <div class="package">
-                    <h3 class="lang-en">Entra ID Optimization</h3>
-                    <h3 class="lang-ar">تحسين إنترا آي دي</h3>
+                    <h3 class="lang-en">Entra ID<br>Optimizer</h3>
+                    <h3 class="lang-ar">محسّن<br>إنترا آي دي</h3>
                     <div class="price">
-                        30,000 QAR
-                        <span class="price-period lang-en">14 days</span>
-                        <span class="price-period lang-ar">14 يوم</span>
+                        30,000
+                        <span class="price-period">QAR</span>
                     </div>
+                    <p class="lang-en" style="color: var(--text-muted); margin-bottom: 24px;">14-day efficiency boost</p>
+                    <p class="lang-ar" style="color: var(--text-muted); margin-bottom: 24px;">تعزيز الكفاءة 14 يوم</p>
                     <ul>
-                        <li class="lang-en">License waste analysis</li>
+                        <li class="lang-en">License waste elimination</li>
                         <li class="lang-en">Identity governance setup</li>
-                        <li class="lang-en">Privileged access management</li>
+                        <li class="lang-en">Privileged access controls</li>
                         <li class="lang-en">Cost optimization report</li>
 
-                        <li class="lang-ar">تحليل هدر التراخيص</li>
+                        <li class="lang-ar">إزالة هدر التراخيص</li>
                         <li class="lang-ar">إعداد حوكمة الهوية</li>
-                        <li class="lang-ar">إدارة الوصول المميز</li>
+                        <li class="lang-ar">ضوابط الوصول المميز</li>
                         <li class="lang-ar">تقرير تحسين التكاليف</li>
                     </ul>
-                    <a href="https://wa.me/974XXXXXXXX?text=Interested%20in%20Entra%20Package" class="btn btn-outline-dark">
-                        <span class="lang-en">Get Started</span>
-                        <span class="lang-ar">ابدأ الآن</span>
+                    <a href="https://wa.me/974XXXXXXXX?text=Entra%20Package" class="btn btn-outline">
+                        <span class="lang-en">Optimize</span>
+                        <span class="lang-ar">حسّن</span>
                     </a>
                 </div>
             </div>
@@ -954,21 +1000,21 @@
     <section class="cta">
         <div class="container">
             <div class="cta-content animate-on-scroll">
-                <h2 class="lang-en">Ready to Modernize Your Microsoft 365?</h2>
-                <h2 class="lang-ar">جاهز لتحديث مايكروسوفت 365؟</h2>
+                <h2 class="lang-en">Ready to Transform?</h2>
+                <h2 class="lang-ar">جاهز للتحول؟</h2>
 
-                <p class="lang-en">Project kick-off within 48 hours. Specialized in Intune Qatar, Autopilot Qatar, and Defender XDR Qatar.</p>
-                <p class="lang-ar">بدء المشروع خلال 48 ساعة. متخصصون في إنتيون قطر وأوتوبايلوت قطر وديفيندر XDR قطر.</p>
+                <p class="lang-en">48-hour project launch. Nordic engineering. Qatar fluency.</p>
+                <p class="lang-ar">إطلاق المشروع في 48 ساعة. هندسة نرويجية. طلاقة قطرية.</p>
 
                 <div class="btn-group">
-                    <a href="https://wa.me/974XXXXXXXX" class="btn btn-accent">
+                    <a href="https://wa.me/974XXXXXXXX" class="btn btn-neon">
                         <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.149-.67.149-.197.297-.767.966-.94 1.164-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.123-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
                         </svg>
-                        <span class="lang-en">WhatsApp Us</span>
-                        <span class="lang-ar">راسلنا</span>
+                        <span class="lang-en">Start Your Project</span>
+                        <span class="lang-ar">ابدأ مشروعك</span>
                     </a>
-                    <a href="mailto:info@nordcloud.qa" class="btn btn-outline">
+                    <a href="mailto:info@nordcloud.qa" class="btn btn-glass">
                         info@nordcloud.qa
                     </a>
                 </div>
@@ -983,15 +1029,15 @@
                 <div class="footer-section">
                     <h4 class="lang-en">NordCloud Qatar</h4>
                     <h4 class="lang-ar">نوركلاود قطر</h4>
-                    <p class="lang-en">Microsoft 365 Consulting</p>
-                    <p class="lang-ar">استشارات مايكروسوفت 365</p>
+                    <p class="lang-en">Next-Gen M365 Consulting</p>
+                    <p class="lang-ar">استشارات M365 من الجيل التالي</p>
                     <p>Ras Bufontas Free Zone</p>
                     <p>Doha, Qatar</p>
                 </div>
 
                 <div class="footer-section">
-                    <h4 class="lang-en">Services</h4>
-                    <h4 class="lang-ar">الخدمات</h4>
+                    <h4 class="lang-en">Solutions</h4>
+                    <h4 class="lang-ar">الحلول</h4>
                     <a href="#" class="lang-en">Intune & Autopilot</a>
                     <a href="#" class="lang-ar">إنتيون وأوتوبايلوت</a>
                     <a href="#" class="lang-en">Defender XDR</a>
@@ -1012,8 +1058,8 @@
                 </div>
 
                 <div class="footer-section">
-                    <h4 class="lang-en">Contact</h4>
-                    <h4 class="lang-ar">التواصل</h4>
+                    <h4 class="lang-en">Connect</h4>
+                    <h4 class="lang-ar">تواصل</h4>
                     <a href="tel:+974XXXXXXXX">+974 XXXX XXXX</a>
                     <a href="mailto:info@nordcloud.qa">info@nordcloud.qa</a>
                     <a href="https://wa.me/974XXXXXXXX">WhatsApp</a>
@@ -1022,8 +1068,8 @@
             </div>
 
             <div class="footer-bottom">
-                <p class="lang-en">© 2025 NordCloud Qatar. All rights reserved.</p>
-                <p class="lang-ar">© 2025 نوركلاود قطر. جميع الحقوق محفوظة.</p>
+                <p class="lang-en">© 2025 NordCloud Qatar. Engineered for excellence.</p>
+                <p class="lang-ar">© 2025 نوركلاود قطر. هندسة من أجل التميز.</p>
             </div>
         </div>
     </footer>
@@ -1125,7 +1171,7 @@
 
         // Scroll animations
         const observerOptions = {
-            threshold: 0.15,
+            threshold: 0.1,
             rootMargin: '0px'
         };
 
@@ -1141,7 +1187,6 @@
             const animatedElements = document.querySelectorAll('.animate-on-scroll');
             animatedElements.forEach(el => observer.observe(el));
 
-            // Smooth scroll for anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     const href = this.getAttribute('href');
