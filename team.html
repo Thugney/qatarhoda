@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team - NordCloud Qatar | Microsoft 365 Experts</title>
+    <meta name="description" content="Meet the Norwegian-founded team behind NordCloud Qatar's Microsoft 365 expertise.">
+
+    <link rel="canonical" href="https://nordcloud.qa/team">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-dark: #0A0E1A;
+            --bg-darker: #050810;
+            --bg-card: rgba(15, 23, 42, 0.6);
+            --neon-cyan: #00F0FF;
+            --neon-purple: #B537FF;
+            --text-primary: #FFFFFF;
+            --text-secondary: #94A3B8;
+            --text-muted: #64748B;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --radius-lg: 24px;
+        }
+
+        body {
+            font-family: 'Space Grotesk', -apple-system, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        body.ar-lang {
+            font-family: 'Tajawal', -apple-system, sans-serif;
+            direction: rtl;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .lang-en { display: initial; }
+        .lang-ar { display: none; }
+        body.ar-lang .lang-en { display: none; }
+        body.ar-lang .lang-ar { display: initial; }
+
+        h1.lang-en, h2.lang-en, h3.lang-en, p.lang-en { display: block; }
+        h1.lang-ar, h2.lang-ar, h3.lang-ar, p.lang-ar { display: none; }
+        body.ar-lang h1.lang-en, body.ar-lang h2.lang-en, body.ar-lang h3.lang-en, body.ar-lang p.lang-en { display: none; }
+        body.ar-lang h1.lang-ar, body.ar-lang h2.lang-ar, body.ar-lang h3.lang-ar, body.ar-lang p.lang-ar { display: block; }
+
+        .lang-switch {
+            position: fixed;
+            top: 24px;
+            right: 24px;
+            z-index: 1000;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            cursor: pointer;
+            display: flex;
+            gap: 10px;
+        }
+
+        body.ar-lang .lang-switch {
+            right: auto;
+            left: 24px;
+        }
+
+        nav {
+            position: absolute;
+            top: 24px;
+            left: 24px;
+        }
+
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--neon-cyan);
+            background: var(--glass-bg);
+        }
+
+        header {
+            padding: 120px 24px 80px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--neon-cyan);
+        }
+
+        p {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            padding: 60px 24px;
+        }
+
+        .team-member {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-8px);
+            border-color: var(--neon-cyan);
+            box-shadow: 0 20px 60px rgba(0, 240, 255, 0.3);
+        }
+
+        .member-photo {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 24px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        .member-name {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+
+        .member-role {
+            font-size: 1.125rem;
+            color: var(--neon-cyan);
+            margin-bottom: 16px;
+        }
+
+        .member-bio {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        .member-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .skill-tag {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 16px 36px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
+            color: var(--bg-dark);
+            transition: all 0.3s ease;
+            margin-top: 40px;
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0, 240, 255, 0.4);
+        }
+    </style>
+</head>
+<body class="en-lang">
+    <nav>
+        <a href="index.html">
+            <span class="lang-en">← Back to Home</span>
+            <span class="lang-ar">→ العودة للصفحة الرئيسية</span>
+        </a>
+    </nav>
+
+    <div class="lang-switch" onclick="toggleLanguage()">
+        <span class="switch-en active">EN</span>
+        <span>|</span>
+        <span class="switch-ar">AR</span>
+    </div>
+
+    <header>
+        <div class="container">
+            <h1 class="lang-en">Meet Our Team</h1>
+            <h1 class="lang-ar">تعرف على فريقنا</h1>
+            <p class="lang-en">Norwegian expertise, Qatar commitment</p>
+            <p class="lang-ar">خبرة نرويجية، التزام قطري</p>
+        </div>
+    </header>
+
+    <section>
+        <div class="container">
+            <div class="team-grid">
+                <!-- Team Member 1 -->
+                <div class="team-member">
+                    <div class="member-photo">👤</div>
+                    <h3 class="member-name">Founder & Lead Architect</h3>
+                    <p class="member-role lang-en">Microsoft 365 Solutions Architect</p>
+                    <p class="member-role lang-ar">مهندس حلول Microsoft 365</p>
+                    <p class="member-bio lang-en">
+                        Norwegian-trained engineer with 10+ years in Microsoft enterprise solutions. Led large-scale Intune and Defender XDR deployments across Scandinavia before establishing operations in Qatar.
+                    </p>
+                    <p class="member-bio lang-ar">
+                        مهندس مدرب في النرويج مع أكثر من 10 سنوات في حلول Microsoft للمؤسسات. قاد عمليات نشر واسعة النطاق لـ Intune و Defender XDR في جميع أنحاء الدول الاسكندنافية قبل إنشاء العمليات في قطر.
+                    </p>
+                    <div class="member-skills">
+                        <span class="skill-tag">Intune Expert</span>
+                        <span class="skill-tag">Autopilot</span>
+                        <span class="skill-tag">Defender XDR</span>
+                        <span class="skill-tag">Zero Trust</span>
+                    </div>
+                </div>
+
+                <!-- Team Member 2 -->
+                <div class="team-member">
+                    <div class="member-photo">👤</div>
+                    <h3 class="member-name">Security & Compliance Lead</h3>
+                    <p class="member-role lang-en">Cybersecurity Specialist</p>
+                    <p class="member-role lang-ar">أخصائي الأمن السيبراني</p>
+                    <p class="member-bio lang-en">
+                        Specialized in Zero-Trust architecture and compliance frameworks. Bilingual Arabic-English speaker with deep understanding of Qatar's regulatory requirements and international security standards.
+                    </p>
+                    <p class="member-bio lang-ar">
+                        متخصص في بنية Zero-Trust وأطر الامتثال. متحدث ثنائي اللغة عربي-إنجليزي مع فهم عميق لمتطلبات قطر التنظيمية والمعايير الأمنية الدولية.
+                    </p>
+                    <div class="member-skills">
+                        <span class="skill-tag">Defender XDR</span>
+                        <span class="skill-tag">Compliance</span>
+                        <span class="skill-tag">Security Audit</span>
+                        <span class="skill-tag">Arabic</span>
+                    </div>
+                </div>
+
+                <!-- Team Member 3 -->
+                <div class="team-member">
+                    <div class="member-photo">👤</div>
+                    <h3 class="member-name">Identity & Access Manager</h3>
+                    <p class="member-role lang-en">Entra ID Specialist</p>
+                    <p class="member-role lang-ar">أخصائي Entra ID</p>
+                    <p class="member-bio lang-en">
+                        Expert in identity governance, licensing optimization, and conditional access policies. Focuses on cost efficiency and user experience in Microsoft 365 deployments.
+                    </p>
+                    <p class="member-bio lang-ar">
+                        خبير في حوكمة الهوية وتحسين الترخيص وسياسات الوصول الشرطي. يركز على كفاءة التكلفة وتجربة المستخدم في عمليات نشر Microsoft 365.
+                    </p>
+                    <div class="member-skills">
+                        <span class="skill-tag">Entra ID</span>
+                        <span class="skill-tag">Licensing</span>
+                        <span class="skill-tag">Conditional Access</span>
+                        <span class="skill-tag">Governance</span>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center;">
+                <a href="contact.html" class="btn">
+                    <span class="lang-en">Work With Us</span>
+                    <span class="lang-ar">اعمل معنا</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function toggleLanguage() {
+            const body = document.body;
+            const isArabic = body.classList.contains('ar-lang');
+
+            if (isArabic) {
+                body.classList.remove('ar-lang');
+                body.classList.add('en-lang');
+                document.querySelector('.switch-en').classList.add('active');
+                document.querySelector('.switch-ar').classList.remove('active');
+            } else {
+                body.classList.add('ar-lang');
+                body.classList.remove('en-lang');
+                document.querySelector('.switch-ar').classList.add('active');
+                document.querySelector('.switch-en').classList.remove('active');
+            }
+        }
+    </script>
+</body>
+</html>
