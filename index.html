@@ -6,10 +6,10 @@
     <title>Microsoft 365 Qatar | Intune Qatar | Autopilot Qatar | Defender XDR Qatar | NordCloud Qatar – مايكروسوفت 365 قطر | إنتيون قطر | أوتوبايلوت قطر | ديفيندر XDR قطر | نوركلاود قطر</title>
     <meta name="description" content="Top Microsoft 365 consulting in Qatar: Intune, Autopilot, Entra ID, Defender XDR for schools & clinics in Doha. Arabic support, Nordic quality. أفضل استشارات مايكروسوفت 365 في قطر: إنتيون، أوتوبايلوت، إنترا آي دي، ديفيندر XDR للمدارس والعيادات في الدوحة. دعم عربي، جودة نرويجية.">
     <meta name="keywords" content="Microsoft 365 Qatar, Intune Qatar, Autopilot Qatar, Defender XDR Qatar, Microsoft cloud consulting Qatar, M365 services Doha, Azure Qatar, مايكروسوفت 365 قطر, إنتيون قطر, أوتوبايلوت قطر, ديفيندر XDR قطر, استشارات سحابية مايكروسوفت قطر, خدمات M365 الدوحة, أزور قطر">
-    
+
     <!-- Canonical URL -->
     <link rel="canonical" href="https://nordcloud.qa">
-    
+
     <!-- Open Graph / Arabic SEO -->
     <meta property="og:title" content="Microsoft 365 Consulting Qatar – NordCloud Qatar | استشارات مايكروسوفت 365 قطر – نوركلاود قطر">
     <meta property="og:description" content="Expert Microsoft 365 services in Qatar: Intune, Autopilot, Defender XDR for Doha schools & clinics. خبراء خدمات مايكروسوفت 365 في قطر: إنتيون، أوتوبايلوت، ديفيندر XDR لمدارس وعيادات الدوحة.">
@@ -18,17 +18,17 @@
     <meta property="og:type" content="website">
     <meta property="og:locale" content="en_QA">
     <meta property="og:locale:alternate" content="ar_QA">
-    
+
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Microsoft 365 Qatar - NordCloud | مايكروسوفت 365 قطر - نوركلاود">
     <meta name="twitter:description" content="Expert Microsoft 365 services in Qatar | خبراء خدمات مايكروسوفت 365 في قطر">
-    
+
     <!-- Hreflang tags for multilingual SEO -->
     <link rel="alternate" hreflang="en" href="https://nordcloud.qa/en">
     <link rel="alternate" hreflang="ar" href="https://nordcloud.qa/ar">
     <link rel="alternate" hreflang="x-default" href="https://nordcloud.qa">
-    
+
     <!-- Local Business Schema -->
     <script type="application/ld+json">
     {
@@ -61,191 +61,210 @@
         ]
     }
     </script>
-    
-    <!-- Google Fonts (Cairo + Inter) -->
+
+    <!-- Google Fonts (Tajawal for Arabic + Inter for English) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
     <style>
+        /* ===== CSS RESET & BASE ===== */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         :root {
-            --primary: #0055FF;
-            --primary-dark: #0044dd;
-            --secondary: #00d4ff;
-            --dark: #0f172a;
-            --light: #f8fafc;
-            --gray: #64748b;
-            --success: #25D366;
+            /* Clean Color System */
+            --primary: #0066FF;
+            --primary-dark: #0052CC;
+            --primary-light: #3385FF;
+            --accent: #10B981;
+            --accent-dark: #059669;
+
+            /* Neutral Grays */
+            --gray-900: #0F172A;
+            --gray-800: #1E293B;
+            --gray-700: #334155;
+            --gray-600: #475569;
+            --gray-500: #64748B;
+            --gray-400: #94A3B8;
+            --gray-300: #CBD5E1;
+            --gray-200: #E2E8F0;
+            --gray-100: #F1F5F9;
+            --gray-50: #F8FAFC;
+
+            /* Functional Colors */
+            --white: #FFFFFF;
+            --background: #FAFBFC;
+            --border: #E5E7EB;
+
+            /* Shadows */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+            /* Spacing */
             --radius: 12px;
-            --shadow: 0 10px 30px rgba(0,0,0,0.08);
-            --shadow-hover: 0 20px 40px rgba(0,0,0,0.12);
+            --radius-lg: 16px;
+            --radius-full: 9999px;
         }
-        
-        /* Base Styles */
+
         html {
             scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
-        
+
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: #ffffff;
-            color: #1e293b;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--white);
+            color: var(--gray-700);
             line-height: 1.6;
+            font-size: 16px;
             overflow-x: hidden;
-            transition: font-family 0.3s ease;
         }
-        
+
         body.ar-lang {
-            font-family: 'Cairo', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Tajawal', -apple-system, BlinkMacSystemFont, sans-serif;
             direction: rtl;
+            line-height: 1.8;
         }
-        
-        /* Language-specific visibility - FIXED VERSION */
-        .lang-content {
-            /* Default styles preserved */
-        }
-        
-        .lang-en {
-            display: initial;
-        }
-        
-        .lang-ar {
-            display: none;
-        }
-        
-        body.ar-lang .lang-en {
-            display: none;
-        }
-        
-        body.ar-lang .lang-ar {
-            display: initial;
-        }
-        
-        /* Special handling for block elements */
-        h1.lang-en, h2.lang-en, h3.lang-en, h4.lang-en, 
-        p.lang-en, div.lang-en {
-            display: block;
-        }
-        
-        h1.lang-ar, h2.lang-ar, h3.lang-ar, h4.lang-ar, 
-        p.lang-ar, div.lang-ar {
-            display: none;
-        }
-        
-        body.ar-lang h1.lang-en, body.ar-lang h2.lang-en, 
-        body.ar-lang h3.lang-en, body.ar-lang h4.lang-en, 
-        body.ar-lang p.lang-en, body.ar-lang div.lang-en {
-            display: none;
-        }
-        
-        body.ar-lang h1.lang-ar, body.ar-lang h2.lang-ar, 
-        body.ar-lang h3.lang-ar, body.ar-lang h4.lang-ar, 
-        body.ar-lang p.lang-ar, body.ar-lang div.lang-ar {
-            display: block;
-        }
-        
-        /* Special handling for list items */
-        li.lang-en {
-            display: list-item;
-        }
-        
-        li.lang-ar {
-            display: none;
-        }
-        
-        body.ar-lang li.lang-en {
-            display: none;
-        }
-        
-        body.ar-lang li.lang-ar {
-            display: list-item;
-        }
-        
-        /* Typography */
-        h1, h2, h3, h4 {
-            font-weight: 800;
-            color: var(--dark);
+
+        /* ===== LANGUAGE VISIBILITY ===== */
+        .lang-en { display: initial; }
+        .lang-ar { display: none; }
+
+        body.ar-lang .lang-en { display: none; }
+        body.ar-lang .lang-ar { display: initial; }
+
+        h1.lang-en, h2.lang-en, h3.lang-en, h4.lang-en,
+        p.lang-en, div.lang-en { display: block; }
+        h1.lang-ar, h2.lang-ar, h3.lang-ar, h4.lang-ar,
+        p.lang-ar, div.lang-ar { display: none; }
+
+        body.ar-lang h1.lang-en, body.ar-lang h2.lang-en,
+        body.ar-lang h3.lang-en, body.ar-lang h4.lang-en,
+        body.ar-lang p.lang-en, body.ar-lang div.lang-en { display: none; }
+        body.ar-lang h1.lang-ar, body.ar-lang h2.lang-ar,
+        body.ar-lang h3.lang-ar, body.ar-lang h4.lang-ar,
+        body.ar-lang p.lang-ar, body.ar-lang div.lang-ar { display: block; }
+
+        li.lang-en { display: list-item; }
+        li.lang-ar { display: none; }
+        body.ar-lang li.lang-en { display: none; }
+        body.ar-lang li.lang-ar { display: list-item; }
+
+        /* ===== TYPOGRAPHY ===== */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            color: var(--gray-900);
             line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
             margin-bottom: 1rem;
         }
-        
-        h1 {
-            font-size: clamp(2rem, 5vw, 3.5rem);
-        }
-        
-        h2 {
-            font-size: clamp(1.75rem, 4vw, 2.5rem);
-        }
-        
+
         h3 {
-            font-size: clamp(1.25rem, 3vw, 1.75rem);
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            margin-bottom: 0.75rem;
         }
-        
+
+        h4 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
         p {
             margin-bottom: 1rem;
-            color: var(--gray);
+            color: var(--gray-600);
+            letter-spacing: 0.01em;
         }
-        
-        /* Container */
+
+        .text-large {
+            font-size: 1.25rem;
+            line-height: 1.7;
+        }
+
+        /* ===== LAYOUT ===== */
         .container {
-            max-width: 1200px;
+            max-width: 1280px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px;
         }
-        
-        /* Language Switcher */
+
+        .container-narrow {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        /* ===== LANGUAGE SWITCHER ===== */
         .lang-switch {
             position: fixed;
-            top: 20px;
-            right: 20px;
+            top: 24px;
+            right: 24px;
             z-index: 1000;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 10px 20px;
-            border-radius: 50px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            background: var(--white);
+            border: 1px solid var(--border);
+            padding: 8px 16px;
+            border-radius: var(--radius-full);
+            box-shadow: var(--shadow-md);
             font-weight: 600;
+            font-size: 0.875rem;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
-        
+
         body.ar-lang .lang-switch {
             right: auto;
-            left: 20px;
+            left: 24px;
         }
-        
+
         .lang-switch:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--gray-300);
         }
-        
+
+        .lang-switch:focus {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+        }
+
         .lang-switch span {
-            color: #94a3b8;
-            transition: color 0.3s ease;
+            color: var(--gray-500);
+            transition: color 0.2s ease;
         }
-        
+
         .lang-switch span.active {
             color: var(--primary);
-            font-weight: 700;
         }
-        
-        /* Header Hero Section */
+
+        /* ===== HEADER / HERO ===== */
         header {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            background: var(--primary);
             position: relative;
             overflow: hidden;
-            padding: 120px 20px 80px;
+            padding: 180px 24px 120px;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
         }
-        
+
         header::before {
             content: '';
             position: absolute;
@@ -253,452 +272,494 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff20" fill-opacity="0.3" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,138.7C960,139,1056,117,1152,96C1248,75,1344,53,1392,42.7L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
-            background-size: cover;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.05) 0%, transparent 50%);
+            pointer-events: none;
         }
-        
+
         .hero-content {
             position: relative;
             z-index: 1;
             text-align: center;
-            color: white;
+            color: var(--white);
             max-width: 900px;
             margin: 0 auto;
         }
-        
+
         .hero-content h1 {
-            color: white;
-            margin-bottom: 1.5rem;
-            animation: fadeInUp 0.8s ease;
+            color: var(--white);
+            animation: fadeInUp 0.6s ease both;
         }
-        
+
         .hero-content p {
-            font-size: 1.35rem;
+            font-size: clamp(1.125rem, 2vw, 1.375rem);
             color: rgba(255, 255, 255, 0.95);
-            margin-bottom: 2rem;
-            animation: fadeInUp 0.8s ease 0.2s both;
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+            animation: fadeInUp 0.6s ease 0.1s both;
         }
-        
-        /* Buttons */
+
+        /* ===== BUTTONS ===== */
         .btn-group {
             display: flex;
             flex-wrap: wrap;
-            gap: 1rem;
+            gap: 16px;
             justify-content: center;
-            animation: fadeInUp 0.8s ease 0.4s both;
+            animation: fadeInUp 0.6s ease 0.2s both;
         }
-        
+
         .btn {
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 8px;
-            padding: 16px 32px;
-            border-radius: 50px;
+            padding: 14px 32px;
+            border-radius: var(--radius-full);
             font-weight: 600;
+            font-size: 1rem;
             text-decoration: none;
-            transition: all 0.3s ease;
-            font-size: 1.05rem;
+            transition: all 0.2s ease;
             border: 2px solid transparent;
+            cursor: pointer;
+            white-space: nowrap;
         }
-        
+
+        .btn:focus {
+            outline: 2px solid var(--white);
+            outline-offset: 2px;
+        }
+
         .btn-primary {
-            background: white;
+            background: var(--white);
             color: var(--primary);
         }
-        
+
         .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
         }
-        
-        .btn-wa {
-            background: var(--success);
-            color: white;
+
+        .btn-primary:active {
+            transform: translateY(0) scale(0.98);
         }
-        
-        .btn-wa:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.3);
+
+        .btn-accent {
+            background: var(--accent);
+            color: var(--white);
         }
-        
+
+        .btn-accent:hover {
+            background: var(--accent-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(16, 185, 129, 0.25);
+        }
+
+        .btn-accent:active {
+            transform: translateY(0) scale(0.98);
+        }
+
         .btn-outline {
             background: transparent;
-            color: white;
-            border: 2px solid white;
+            color: var(--white);
+            border: 2px solid rgba(255, 255, 255, 0.5);
         }
-        
+
         .btn-outline:hover {
-            background: white;
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--white);
+        }
+
+        .btn-outline-dark {
+            background: transparent;
             color: var(--primary);
+            border: 2px solid var(--primary);
         }
-        
-        /* Features Section */
+
+        .btn-outline-dark:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        /* ===== SECTIONS ===== */
+        section {
+            padding: 120px 24px;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 80px;
+        }
+
+        .section-header p {
+            font-size: 1.125rem;
+            color: var(--gray-600);
+            margin-top: 1rem;
+        }
+
+        /* ===== FEATURES SECTION ===== */
         .features {
-            padding: 100px 0;
-            background: linear-gradient(to bottom, #ffffff, #f8fafc);
+            background: var(--background);
         }
-        
+
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 48px;
         }
-        
+
         .feature-card {
             text-align: center;
-            padding: 40px 30px;
-            background: white;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
+            padding: 48px 32px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            transition: all 0.2s ease;
         }
-        
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
-        }
-        
+
         .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-hover);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--gray-300);
         }
-        
-        .feature-card:hover::before {
-            transform: scaleX(1);
-        }
-        
+
         .feature-icon {
-            width: 60px;
-            height: 60px;
-            margin: 0 auto 20px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            border-radius: 50%;
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 24px;
+            background: var(--gray-100);
+            border-radius: var(--radius);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 28px;
-            color: white;
+            transition: all 0.2s ease;
         }
-        
-        /* Packages Section */
+
+        .feature-card:hover .feature-icon {
+            background: var(--primary);
+        }
+
+        .feature-icon svg {
+            width: 32px;
+            height: 32px;
+            stroke: var(--gray-700);
+            transition: stroke 0.2s ease;
+        }
+
+        .feature-card:hover .feature-icon svg {
+            stroke: var(--white);
+        }
+
+        .feature-card h3 {
+            color: var(--gray-900);
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            color: var(--gray-600);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* ===== PACKAGES SECTION ===== */
         .packages-section {
-            padding: 100px 0;
-            background: #f0f7ff;
+            background: var(--white);
         }
-        
+
         .packages {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 48px;
         }
-        
+
         .package {
-            background: white;
-            border-radius: var(--radius);
-            padding: 40px 30px;
+            background: var(--white);
+            border: 2px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 48px 36px;
             text-align: center;
-            box-shadow: var(--shadow);
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
             position: relative;
-            overflow: hidden;
         }
-        
-        .package::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
+
         .package:hover {
-            transform: translateY(-15px) scale(1.02);
-            box-shadow: 0 30px 60px rgba(0, 85, 255, 0.15);
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--primary);
         }
-        
-        .package:hover::before {
-            opacity: 0.05;
-        }
-        
+
         .package.featured {
-            border: 2px solid var(--primary);
-            transform: scale(1.05);
+            border-color: var(--primary);
+            border-width: 2px;
         }
-        
+
         .package-badge {
             position: absolute;
-            top: 20px;
-            right: 20px;
+            top: 24px;
+            right: 24px;
             background: var(--primary);
-            color: white;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.875rem;
+            color: var(--white);
+            padding: 6px 14px;
+            border-radius: var(--radius-full);
+            font-size: 0.8125rem;
             font-weight: 600;
         }
-        
+
         body.ar-lang .package-badge {
             right: auto;
-            left: 20px;
+            left: 24px;
         }
-        
+
+        .package h3 {
+            color: var(--gray-900);
+            margin-bottom: 16px;
+        }
+
         .price {
-            font-size: 2.5rem;
+            font-size: 3rem;
             color: var(--primary);
-            font-weight: 900;
-            margin: 20px 0;
-            position: relative;
+            font-weight: 700;
+            margin: 24px 0;
+            letter-spacing: -0.03em;
         }
-        
+
         .price-period {
             font-size: 1rem;
-            color: var(--gray);
-            font-weight: normal;
+            color: var(--gray-500);
+            font-weight: 400;
+            display: block;
+            margin-top: 8px;
         }
-        
+
         .package ul {
             list-style: none;
             padding: 0;
-            margin: 30px 0;
+            margin: 32px 0;
             text-align: left;
         }
-        
+
         body.ar-lang .package ul {
             text-align: right;
         }
-        
+
         .package li {
-            padding: 10px 0;
+            padding: 12px 0;
             display: flex;
-            align-items: center;
-            gap: 10px;
-            color: #475569;
+            align-items: flex-start;
+            gap: 12px;
+            color: var(--gray-600);
+            font-size: 0.9375rem;
+            line-height: 1.6;
         }
-        
+
         .package li::before {
-            content: '✓';
-            color: var(--success);
-            font-weight: bold;
-            font-size: 1.2rem;
-            flex-shrink: 0;
-        }
-        
-        /* CTA Section */
-        .cta {
-            background: linear-gradient(135deg, var(--dark) 0%, #1e293b 100%);
-            padding: 100px 20px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .cta::before {
             content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff10" fill-opacity="0.1" d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>') no-repeat top;
-            background-size: cover;
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2310B981' stroke-width='3'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M5 13l4 4L19 7'/%3E%3C/svg%3E") center/contain no-repeat;
+            margin-top: 2px;
         }
-        
+
+        body.ar-lang .package li {
+            flex-direction: row-reverse;
+        }
+
+        /* ===== CTA SECTION ===== */
+        .cta {
+            background: var(--gray-900);
+            padding: 120px 24px;
+            text-align: center;
+        }
+
         .cta-content {
-            position: relative;
-            z-index: 1;
             max-width: 800px;
             margin: 0 auto;
         }
-        
+
         .cta h2 {
-            color: white;
-            margin-bottom: 1.5rem;
-        }
-        
-        .cta p {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 1.25rem;
-            margin-bottom: 2rem;
-        }
-        
-        /* Footer */
-        footer {
-            background: var(--dark);
-            color: white;
-            padding: 60px 20px 30px;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        
-        .footer-section h4 {
-            color: white;
+            color: var(--white);
             margin-bottom: 1rem;
         }
-        
+
+        .cta p {
+            color: var(--gray-300);
+            font-size: 1.125rem;
+            margin-bottom: 2.5rem;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--gray-900);
+            color: var(--gray-300);
+            padding: 80px 24px 40px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-section h4 {
+            color: var(--white);
+            font-size: 1rem;
+            margin-bottom: 1.25rem;
+        }
+
         .footer-section p,
         .footer-section a {
-            color: rgba(255, 255, 255, 0.7);
+            color: var(--gray-400);
             text-decoration: none;
             display: block;
-            margin-bottom: 0.5rem;
-            transition: color 0.3s ease;
+            margin-bottom: 0.75rem;
+            font-size: 0.9375rem;
+            transition: color 0.2s ease;
         }
-        
+
         .footer-section a:hover {
-            color: white;
+            color: var(--white);
         }
-        
+
+        .footer-section a:focus {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+
         .footer-bottom {
             text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.6);
+            padding-top: 40px;
+            border-top: 1px solid var(--gray-800);
+            color: var(--gray-500);
+            font-size: 0.875rem;
         }
-        
-        /* Animations */
+
+        /* ===== ANIMATIONS ===== */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(20px);
             }
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-        
+
         .animate-on-scroll {
             opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
         }
-        
+
         .animate-on-scroll.animated {
             opacity: 1;
             transform: translateY(0);
         }
-        
-        /* Responsive Design */
+
+        /* ===== RESPONSIVE DESIGN ===== */
         @media (max-width: 768px) {
             header {
-                padding: 100px 20px 60px;
+                padding: 140px 20px 80px;
+                min-height: 500px;
             }
-            
+
+            section {
+                padding: 80px 20px;
+            }
+
+            .section-header {
+                margin-bottom: 60px;
+            }
+
             .lang-switch {
-                top: 10px;
-                right: 10px;
-                padding: 8px 15px;
-                font-size: 0.9rem;
+                top: 16px;
+                right: 16px;
+                padding: 6px 12px;
+                font-size: 0.8125rem;
             }
-            
+
             body.ar-lang .lang-switch {
                 right: auto;
-                left: 10px;
+                left: 16px;
             }
-            
-            .hero-content p {
-                font-size: 1.1rem;
-            }
-            
-            .btn {
-                padding: 14px 28px;
-                font-size: 1rem;
-            }
-            
-            .features-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-            
-            .packages {
-                grid-template-columns: 1fr;
-            }
-            
-            .package.featured {
-                transform: scale(1);
-            }
-            
-            .price {
-                font-size: 2rem;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 2rem;
-            }
-            
-            h2 {
-                font-size: 1.5rem;
-            }
-            
-            .btn-group {
-                flex-direction: column;
-                width: 100%;
-            }
-            
+
             .btn {
                 width: 100%;
                 justify-content: center;
             }
+
+            .btn-group {
+                flex-direction: column;
+            }
+
+            .features-grid,
+            .packages {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .price {
+                font-size: 2.5rem;
+            }
         }
-        
-        /* Print Styles */
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.75rem;
+            }
+
+            .container {
+                padding: 0 16px;
+            }
+        }
+
+        /* ===== ACCESSIBILITY ===== */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        @media (prefers-contrast: high) {
+            :root {
+                --primary: #0052CC;
+                --border: #000000;
+            }
+        }
+
+        /* Focus visible for keyboard navigation */
+        :focus-visible {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+        }
+
+        /* Print styles */
         @media print {
-            .lang-switch {
+            .lang-switch,
+            .btn {
                 display: none;
             }
-            
+
             header {
                 background: none;
                 color: black;
-            }
-            
-            .btn {
-                border: 1px solid black;
-            }
-        }
-        
-        /* High Contrast Mode Support */
-        @media (prefers-contrast: high) {
-            :root {
-                --primary: #0040ff;
-                --shadow: 0 10px 30px rgba(0,0,0,0.2);
-            }
-        }
-        
-        /* Reduced Motion Support */
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                animation: none !important;
-                transition: none !important;
             }
         }
     </style>
 </head>
 <body class="en-lang">
     <!-- Language Switcher -->
-    <div class="lang-switch" onclick="toggleLanguage()" role="button" aria-label="Language Switcher">
+    <div class="lang-switch" onclick="toggleLanguage()" role="button" tabindex="0" aria-label="Language Switcher" onkeypress="if(event.key==='Enter')toggleLanguage()">
         <span class="switch-en active">EN</span>
         <span>|</span>
         <span class="switch-ar">AR</span>
@@ -708,33 +769,27 @@
     <header>
         <div class="container">
             <div class="hero-content">
-                <h1 class="lang-ar">نوركلاود قطر – استشارات مايكروسوفت 365 في قطر</h1>
-                <h1 class="lang-en">NordCloud Qatar – Microsoft 365 Consulting in Qatar</h1>
-                
-                <p class="lang-ar">
-                    خبراء مايكروسوفت 365 قطر: إنتيون، أوتوبايلوت، إنترا آي دي، ديفيندر XDR، بيرفيو<br>
-                    دعم عربي كامل للمدارس الدولية والعيادات في الدوحة
-                </p>
+                <h1 class="lang-en">Microsoft 365 Consulting for Qatar</h1>
+                <h1 class="lang-ar">استشارات مايكروسوفت 365 في قطر</h1>
+
                 <p class="lang-en">
-                    Expert Microsoft 365 Qatar services: Intune, Autopilot, Entra ID, Defender XDR, Purview<br>
-                    Full Arabic support for international schools & clinics in Doha
+                    Expert Intune, Autopilot & Defender XDR implementation for Doha's international schools and medical clinics. Nordic precision, Arabic support.
                 </p>
-                
+                <p class="lang-ar">
+                    تنفيذ احترافي لإنتيون وأوتوبايلوت وديفيندر XDR للمدارس الدولية والعيادات الطبية في الدوحة. دقة نرويجية، دعم عربي كامل.
+                </p>
+
                 <div class="btn-group">
-                    <a href="https://wa.me/974XXXXXXXX" class="btn btn-wa" aria-label="WhatsApp">
+                    <a href="https://wa.me/974XXXXXXXX" class="btn btn-accent" aria-label="WhatsApp">
                         <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.149-.67.149-.197.297-.767.966-.94 1.164-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.123-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
                         </svg>
-                        <span class="lang-ar">تواصل عبر الواتساب</span>
-                        <span class="lang-en">WhatsApp Us</span>
+                        <span class="lang-en">WhatsApp</span>
+                        <span class="lang-ar">واتساب</span>
                     </a>
                     <a href="tel:+974XXXXXXXX" class="btn btn-primary">
-                        <span class="lang-ar">اتصل الآن: +974 XXXX XXXX</span>
-                        <span class="lang-en">Call Now: +974 XXXX XXXX</span>
-                    </a>
-                    <a href="#packages" class="btn btn-outline">
-                        <span class="lang-ar">عرض الباقات</span>
-                        <span class="lang-en">View Packages</span>
+                        <span class="lang-en">Call: +974 XXXX XXXX</span>
+                        <span class="lang-ar">اتصل: +974 XXXX XXXX</span>
                     </a>
                 </div>
             </div>
@@ -744,56 +799,60 @@
     <!-- Features Section -->
     <section class="features">
         <div class="container">
-            <h2 class="lang-ar" style="text-align:center">لماذا تختار نوركلاود لخدمات مايكروسوفت 365 في قطر؟</h2>
-            <h2 class="lang-en" style="text-align:center">Why Choose NordCloud for Microsoft 365 Services in Qatar?</h2>
-            
+            <div class="section-header">
+                <h2 class="lang-en">Why NordCloud Qatar</h2>
+                <h2 class="lang-ar">لماذا نوركلاود قطر</h2>
+                <p class="lang-en">Nordic-quality Microsoft 365 consulting designed for Qatar's unique needs</p>
+                <p class="lang-ar">استشارات مايكروسوفت 365 بجودة نرويجية مصممة لاحتياجات قطر الفريدة</p>
+            </div>
+
             <div class="features-grid animate-on-scroll">
                 <div class="feature-card">
-                    <div class="feature-icon">🌍</div>
-                    <h3 class="lang-ar">دعم كامل بالعربية</h3>
+                    <div class="feature-icon">
+                        <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
+                        </svg>
+                    </div>
                     <h3 class="lang-en">Full Arabic Support</h3>
-                    <p class="lang-en">No language barriers for Qatar clients. Complete documentation and training in Arabic and English</p>
-                    <p class="lang-ar">لا حواجز لغوية لعملاء قطر. وثائق وتدريب كامل بالعربية والإنجليزية</p>
+                    <h3 class="lang-ar">دعم عربي كامل</h3>
+                    <p class="lang-en">Bilingual documentation, training, and support for seamless communication</p>
+                    <p class="lang-ar">وثائق وتدريب ودعم ثنائي اللغة لتواصل سلس</p>
                 </div>
-                
+
                 <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3 class="lang-ar">جودة نرويجية</h3>
-                    <h3 class="lang-en">Nordic Engineering Precision</h3>
-                    <p class="lang-en">Reliable, high-quality Microsoft 365 solutions with European standards</p>
-                    <p class="lang-ar">حلول مايكروسوفت 365 موثوقة وعالية الجودة بمعايير أوروبية</p>
+                    <div class="feature-icon">
+                        <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                        </svg>
+                    </div>
+                    <h3 class="lang-en">Nordic Security Standards</h3>
+                    <h3 class="lang-ar">معايير أمان نرويجية</h3>
+                    <p class="lang-en">European-grade security and compliance for Qatar's regulated industries</p>
+                    <p class="lang-ar">أمان وامتثال بمعايير أوروبية للصناعات المنظمة في قطر</p>
                 </div>
-                
+
                 <div class="feature-card">
-                    <div class="feature-icon">🏆</div>
-                    <h3 class="lang-ar">10+ سنوات خبرة</h3>
-                    <h3 class="lang-en">10+ Years M365 Expertise</h3>
-                    <p class="lang-en">Specializing in Intune Qatar & Defender XDR Qatar implementations</p>
-                    <p class="lang-ar">متخصصون في تنفيذ إنتيون قطر وديفيندر XDR قطر</p>
+                    <div class="feature-icon">
+                        <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+                        </svg>
+                    </div>
+                    <h3 class="lang-en">Rapid Deployment</h3>
+                    <h3 class="lang-ar">نشر سريع</h3>
+                    <p class="lang-en">100% remote delivery with 48-hour project kick-off for schools & clinics</p>
+                    <p class="lang-ar">تسليم عن بُعد 100% مع بدء المشروع خلال 48 ساعة للمدارس والعيادات</p>
                 </div>
-                
+
                 <div class="feature-card">
-                    <div class="feature-icon">💻</div>
-                    <h3 class="lang-ar">تسليم عن بُعد 100%</h3>
-                    <h3 class="lang-en">100% Remote Delivery</h3>
-                    <p class="lang-en">Fast setups for Doha schools & clinics. No on-site visits required</p>
-                    <p class="lang-ar">إعدادات سريعة لمدارس وعيادات الدوحة. لا حاجة لزيارات ميدانية</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">🔒</div>
-                    <h3 class="lang-ar">أمان متقدم</h3>
-                    <h3 class="lang-en">Advanced Security</h3>
-                    <p class="lang-en">Zero Trust architecture and compliance with Qatar data regulations</p>
-                    <p class="lang-ar">بنية Zero Trust والامتثال للوائح البيانات القطرية</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">📈</div>
-                    <h3 class="lang-ar">نتائج مضمونة</h3>
-                    <h3 class="lang-en">Guaranteed Results</h3>
-                    <p class="lang-en">Fixed-price packages with clear deliverables and timelines</p>
-                    <p class="lang-ar">باقات بأسعار ثابتة مع نتائج واضحة وجداول زمنية محددة</p>
+                    <div class="feature-icon">
+                        <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" />
+                        </svg>
+                    </div>
+                    <h3 class="lang-en">Fixed-Price Packages</h3>
+                    <h3 class="lang-ar">باقات بأسعار ثابتة</h3>
+                    <p class="lang-en">Transparent pricing with clear deliverables—no hourly billing surprises</p>
+                    <p class="lang-ar">أسعار شفافة مع نتائج واضحة - بدون مفاجآت الفوترة بالساعة</p>
                 </div>
             </div>
         </div>
@@ -802,91 +861,89 @@
     <!-- Packages Section -->
     <section id="packages" class="packages-section">
         <div class="container">
-            <h2 class="lang-ar" style="text-align:center">باقات الأسعار الثابتة لإنتيون قطر وديفيندر XDR قطر</h2>
-            <h2 class="lang-en" style="text-align:center">Fixed-Price Packages for Intune Qatar & Defender XDR Qatar</h2>
-            
+            <div class="section-header">
+                <h2 class="lang-en">Service Packages</h2>
+                <h2 class="lang-ar">باقات الخدمات</h2>
+                <p class="lang-en">Fixed-price Microsoft 365 solutions for Qatar organizations</p>
+                <p class="lang-ar">حلول مايكروسوفت 365 بأسعار ثابتة للمؤسسات القطرية</p>
+            </div>
+
             <div class="packages animate-on-scroll">
                 <div class="package">
-                    <h3 class="lang-ar">تشغيل إنتيون وأوتوبايلوت</h3>
-                    <h3 class="lang-en">Intune + Autopilot Jumpstart</h3>
+                    <h3 class="lang-en">Intune + Autopilot</h3>
+                    <h3 class="lang-ar">إنتيون + أوتوبايلوت</h3>
                     <div class="price">
                         50,000 QAR
-                        <span class="price-period lang-ar">/ 30 يوم</span>
-                        <span class="price-period lang-en">/ 30 days</span>
+                        <span class="price-period lang-en">30 days</span>
+                        <span class="price-period lang-ar">30 يوم</span>
                     </div>
                     <ul>
                         <li class="lang-en">Zero-touch enrollment for 300 devices</li>
-                        <li class="lang-en">Enrollment Status Page (ESP) configuration</li>
-                        <li class="lang-en">Compliance & security policies setup</li>
+                        <li class="lang-en">Compliance & security policies</li>
                         <li class="lang-en">Application deployment automation</li>
-                        <li class="lang-en">Arabic documentation + training</li>
-                        
+                        <li class="lang-en">Bilingual documentation & training</li>
+
                         <li class="lang-ar">تسجيل بدون لمس لـ 300 جهاز</li>
-                        <li class="lang-ar">تكوين صفحة حالة التسجيل (ESP)</li>
-                        <li class="lang-ar">إعداد سياسات الامتثال والأمان</li>
+                        <li class="lang-ar">سياسات الامتثال والأمان</li>
                         <li class="lang-ar">أتمتة نشر التطبيقات</li>
-                        <li class="lang-ar">وثائق وتدريب بالعربية</li>
+                        <li class="lang-ar">وثائق وتدريب ثنائي اللغة</li>
                     </ul>
-                    <a href="https://wa.me/974XXXXXXXX?text=Interested%20in%20Intune%20Autopilot%20Package" class="btn btn-primary">
-                        <span class="lang-ar">احجز الآن</span>
-                        <span class="lang-en">Book Now</span>
+                    <a href="https://wa.me/974XXXXXXXX?text=Interested%20in%20Intune%20Package" class="btn btn-outline-dark">
+                        <span class="lang-en">Get Started</span>
+                        <span class="lang-ar">ابدأ الآن</span>
                     </a>
                 </div>
-                
+
                 <div class="package featured">
-                    <span class="package-badge lang-ar">الأكثر شعبية</span>
                     <span class="package-badge lang-en">Most Popular</span>
-                    
-                    <h3 class="lang-ar">فحص أمان ديفيندر XDR</h3>
-                    <h3 class="lang-en">Defender XDR Security Assessment</h3>
+                    <span class="package-badge lang-ar">الأكثر طلباً</span>
+
+                    <h3 class="lang-en">Defender XDR Assessment</h3>
+                    <h3 class="lang-ar">تقييم ديفيندر XDR</h3>
                     <div class="price">
                         40,000 QAR
-                        <span class="price-period lang-ar">/ 21 يوم</span>
-                        <span class="price-period lang-en">/ 21 days</span>
+                        <span class="price-period lang-en">21 days</span>
+                        <span class="price-period lang-ar">21 يوم</span>
                     </div>
                     <ul>
-                        <li class="lang-en">Complete security baseline assessment</li>
-                        <li class="lang-en">Conditional Access policies design</li>
-                        <li class="lang-en">Incident response playbook creation</li>
-                        <li class="lang-en">Threat hunting capabilities setup</li>
-                        <li class="lang-en">Bilingual report (Arabic + English)</li>
-                        
-                        <li class="lang-ar">تقييم خط الأساس الأمني الكامل</li>
-                        <li class="lang-ar">تصميم سياسات الوصول المشروط</li>
-                        <li class="lang-ar">إنشاء دليل الاستجابة للحوادث</li>
-                        <li class="lang-ar">إعداد قدرات صيد التهديدات</li>
-                        <li class="lang-ar">تقرير ثنائي اللغة (عربي + إنجليزي)</li>
+                        <li class="lang-en">Security baseline assessment</li>
+                        <li class="lang-en">Conditional Access design</li>
+                        <li class="lang-en">Incident response playbook</li>
+                        <li class="lang-en">Bilingual security report</li>
+
+                        <li class="lang-ar">تقييم خط الأساس الأمني</li>
+                        <li class="lang-ar">تصميم الوصول المشروط</li>
+                        <li class="lang-ar">دليل الاستجابة للحوادث</li>
+                        <li class="lang-ar">تقرير أمني ثنائي اللغة</li>
                     </ul>
-                    <a href="https://wa.me/974XXXXXXXX?text=Interested%20in%20Defender%20XDR%20Package" class="btn btn-primary">
-                        <span class="lang-ar">احجز الآن</span>
-                        <span class="lang-en">Book Now</span>
+                    <a href="https://wa.me/974XXXXXXXX?text=Interested%20in%20Defender%20Package" class="btn btn-primary">
+                        <span class="lang-en">Get Started</span>
+                        <span class="lang-ar">ابدأ الآن</span>
                     </a>
                 </div>
-                
+
                 <div class="package">
-                    <h3 class="lang-ar">تحسين إنترا آي دي والتراخيص</h3>
-                    <h3 class="lang-en">Entra ID & License Optimization</h3>
+                    <h3 class="lang-en">Entra ID Optimization</h3>
+                    <h3 class="lang-ar">تحسين إنترا آي دي</h3>
                     <div class="price">
                         30,000 QAR
-                        <span class="price-period lang-ar">/ 14 يوم</span>
-                        <span class="price-period lang-en">/ 14 days</span>
+                        <span class="price-period lang-en">14 days</span>
+                        <span class="price-period lang-ar">14 يوم</span>
                     </div>
                     <ul>
-                        <li class="lang-en">License waste analysis & cleanup</li>
-                        <li class="lang-en">Identity governance framework</li>
+                        <li class="lang-en">License waste analysis</li>
+                        <li class="lang-en">Identity governance setup</li>
                         <li class="lang-en">Privileged access management</li>
-                        <li class="lang-en">Group & access reviews setup</li>
                         <li class="lang-en">Cost optimization report</li>
-                        
-                        <li class="lang-ar">تحليل وتنظيف هدر التراخيص</li>
-                        <li class="lang-ar">إطار حوكمة الهوية</li>
+
+                        <li class="lang-ar">تحليل هدر التراخيص</li>
+                        <li class="lang-ar">إعداد حوكمة الهوية</li>
                         <li class="lang-ar">إدارة الوصول المميز</li>
-                        <li class="lang-ar">إعداد مراجعات المجموعات والوصول</li>
                         <li class="lang-ar">تقرير تحسين التكاليف</li>
                     </ul>
-                    <a href="https://wa.me/974XXXXXXXX?text=Interested%20in%20Entra%20ID%20Package" class="btn btn-primary">
-                        <span class="lang-ar">احجز الآن</span>
-                        <span class="lang-en">Book Now</span>
+                    <a href="https://wa.me/974XXXXXXXX?text=Interested%20in%20Entra%20Package" class="btn btn-outline-dark">
+                        <span class="lang-en">Get Started</span>
+                        <span class="lang-ar">ابدأ الآن</span>
                     </a>
                 </div>
             </div>
@@ -897,22 +954,22 @@
     <section class="cta">
         <div class="container">
             <div class="cta-content animate-on-scroll">
-                <h2 class="lang-ar">جاهز لتحويل بنيتك التحتية لمايكروسوفت 365؟</h2>
-                <h2 class="lang-en">Ready to Transform Your Microsoft 365 Infrastructure?</h2>
-                
-                <p class="lang-ar">تواصل معنا اليوم ونبدأ مشروعك خلال 48 ساعة – متخصصون في إنتيون قطر وأوتوبايلوت قطر</p>
-                <p class="lang-en">Contact us today – project kick-off within 48 hours. Specialists in Intune Qatar & Autopilot Qatar</p>
-                
+                <h2 class="lang-en">Ready to Modernize Your Microsoft 365?</h2>
+                <h2 class="lang-ar">جاهز لتحديث مايكروسوفت 365؟</h2>
+
+                <p class="lang-en">Project kick-off within 48 hours. Specialized in Intune Qatar, Autopilot Qatar, and Defender XDR Qatar.</p>
+                <p class="lang-ar">بدء المشروع خلال 48 ساعة. متخصصون في إنتيون قطر وأوتوبايلوت قطر وديفيندر XDR قطر.</p>
+
                 <div class="btn-group">
-                    <a href="https://wa.me/974XXXXXXXX" class="btn btn-wa">
+                    <a href="https://wa.me/974XXXXXXXX" class="btn btn-accent">
                         <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.149-.67.149-.197.297-.767.966-.94 1.164-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.123-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
                         </svg>
-                        WhatsApp: +974 XXXX XXXX
+                        <span class="lang-en">WhatsApp Us</span>
+                        <span class="lang-ar">راسلنا</span>
                     </a>
                     <a href="mailto:info@nordcloud.qa" class="btn btn-outline">
-                        <span class="lang-ar">info@nordcloud.qa</span>
-                        <span class="lang-en">info@nordcloud.qa</span>
+                        info@nordcloud.qa
                     </a>
                 </div>
             </div>
@@ -924,75 +981,66 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h4 class="lang-ar">نوركلاود قطر</h4>
                     <h4 class="lang-en">NordCloud Qatar</h4>
-                    <p class="lang-ar">شريك مايكروسوفت موثوق في قطر</p>
-                    <p class="lang-en">Your Trusted Microsoft Partner in Qatar</p>
-                    <p>Ras Bufontas Free Zone, Doha</p>
-                    <p>CR: 123456</p>
+                    <h4 class="lang-ar">نوركلاود قطر</h4>
+                    <p class="lang-en">Microsoft 365 Consulting</p>
+                    <p class="lang-ar">استشارات مايكروسوفت 365</p>
+                    <p>Ras Bufontas Free Zone</p>
+                    <p>Doha, Qatar</p>
                 </div>
-                
+
                 <div class="footer-section">
-                    <h4 class="lang-ar">خدماتنا</h4>
-                    <h4 class="lang-en">Our Services</h4>
-                    <a href="#" class="lang-ar">إنتيون وأوتوبايلوت</a>
+                    <h4 class="lang-en">Services</h4>
+                    <h4 class="lang-ar">الخدمات</h4>
                     <a href="#" class="lang-en">Intune & Autopilot</a>
-                    <a href="#" class="lang-ar">ديفيندر XDR</a>
+                    <a href="#" class="lang-ar">إنتيون وأوتوبايلوت</a>
                     <a href="#" class="lang-en">Defender XDR</a>
-                    <a href="#" class="lang-ar">إنترا آي دي</a>
+                    <a href="#" class="lang-ar">ديفيندر XDR</a>
                     <a href="#" class="lang-en">Entra ID</a>
-                    <a href="#" class="lang-ar">مايكروسوفت 365</a>
-                    <a href="#" class="lang-en">Microsoft 365</a>
+                    <a href="#" class="lang-ar">إنترا آي دي</a>
                 </div>
-                
+
                 <div class="footer-section">
-                    <h4 class="lang-ar">الصناعات</h4>
                     <h4 class="lang-en">Industries</h4>
-                    <a href="#" class="lang-ar">المدارس الدولية</a>
+                    <h4 class="lang-ar">القطاعات</h4>
                     <a href="#" class="lang-en">International Schools</a>
-                    <a href="#" class="lang-ar">العيادات الطبية</a>
+                    <a href="#" class="lang-ar">المدارس الدولية</a>
                     <a href="#" class="lang-en">Medical Clinics</a>
-                    <a href="#" class="lang-ar">الشركات</a>
+                    <a href="#" class="lang-ar">العيادات الطبية</a>
                     <a href="#" class="lang-en">Enterprises</a>
-                    <a href="#" class="lang-ar">الحكومة</a>
-                    <a href="#" class="lang-en">Government</a>
+                    <a href="#" class="lang-ar">الشركات</a>
                 </div>
-                
+
                 <div class="footer-section">
-                    <h4 class="lang-ar">تواصل معنا</h4>
                     <h4 class="lang-en">Contact</h4>
+                    <h4 class="lang-ar">التواصل</h4>
                     <a href="tel:+974XXXXXXXX">+974 XXXX XXXX</a>
                     <a href="mailto:info@nordcloud.qa">info@nordcloud.qa</a>
                     <a href="https://wa.me/974XXXXXXXX">WhatsApp</a>
                     <a href="https://linkedin.com/company/nordcloud-qatar">LinkedIn</a>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
-                <p class="lang-ar">© 2025 نوركلاود قطر – جميع الحقوق محفوظة</p>
-                <p class="lang-en">© 2025 NordCloud Qatar – All Rights Reserved</p>
+                <p class="lang-en">© 2025 NordCloud Qatar. All rights reserved.</p>
+                <p class="lang-ar">© 2025 نوركلاود قطر. جميع الحقوق محفوظة.</p>
             </div>
         </div>
     </footer>
 
     <!-- JavaScript -->
     <script>
-        // Global flag to prevent issues
         let isTransitioning = false;
-        
-        // Language Toggle Function - FIXED VERSION
+
         function toggleLanguage() {
             if (isTransitioning) return;
             isTransitioning = true;
-            
+
             try {
                 const body = document.body;
                 const isCurrentlyArabic = body.classList.contains('ar-lang');
                 const newLang = isCurrentlyArabic ? 'en' : 'ar';
-                
-                console.log('Switching to:', newLang);
-                
-                // Toggle body class
+
                 if (newLang === 'ar') {
                     body.classList.add('ar-lang');
                     body.classList.remove('en-lang');
@@ -1004,11 +1052,10 @@
                     document.documentElement.lang = 'en';
                     document.documentElement.dir = 'ltr';
                 }
-                
-                // Update language switcher active state
+
                 const switchEn = document.querySelector('.switch-en');
                 const switchAr = document.querySelector('.switch-ar');
-                
+
                 if (switchEn && switchAr) {
                     if (newLang === 'ar') {
                         switchEn.classList.remove('active');
@@ -1018,40 +1065,34 @@
                         switchAr.classList.remove('active');
                     }
                 }
-                
-                // Update page title
-                document.title = newLang === 'ar' 
+
+                document.title = newLang === 'ar'
                     ? 'مايكروسوفت 365 قطر | إنتيون قطر | أوتوبايلوت قطر | ديفيندر XDR قطر | نوركلاود قطر'
                     : 'Microsoft 365 Qatar | Intune Qatar | Autopilot Qatar | Defender XDR Qatar | NordCloud Qatar';
-                
-                // Store preference
+
                 try {
                     localStorage.setItem('preferredLanguage', newLang);
                 } catch (e) {
                     console.warn('Could not save language preference:', e);
                 }
-                
+
             } catch (error) {
                 console.error('Error in toggleLanguage:', error);
             } finally {
-                // Reset flag after a short delay
                 setTimeout(() => {
                     isTransitioning = false;
-                }, 300);
+                }, 200);
             }
         }
-        
-        // Initialize language on page load
+
         function initializeLanguage() {
             let langToUse = 'en';
-            
+
             try {
-                // Check for saved preference
                 const savedLang = localStorage.getItem('preferredLanguage');
                 if (savedLang === 'ar' || savedLang === 'en') {
                     langToUse = savedLang;
                 } else {
-                    // Auto-detect browser language
                     const browserLang = navigator.language || navigator.userLanguage;
                     if (browserLang && browserLang.toLowerCase().includes('ar')) {
                         langToUse = 'ar';
@@ -1060,8 +1101,7 @@
             } catch (e) {
                 console.warn('LocalStorage not available:', e);
             }
-            
-            // Apply initial language
+
             const body = document.body;
             if (langToUse === 'ar') {
                 body.classList.add('ar-lang');
@@ -1069,29 +1109,26 @@
                 document.documentElement.lang = 'ar';
                 document.documentElement.dir = 'rtl';
                 document.title = 'مايكروسوفت 365 قطر | إنتيون قطر | أوتوبايلوت قطر | ديفيندر XDR قطر | نوركلاود قطر';
-                
+
                 const switchEn = document.querySelector('.switch-en');
                 const switchAr = document.querySelector('.switch-ar');
                 if (switchEn) switchEn.classList.remove('active');
                 if (switchAr) switchAr.classList.add('active');
             }
-            
-            console.log('Language initialized to:', langToUse);
         }
-        
-        // Wait for DOM to be ready
+
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', initializeLanguage);
         } else {
             initializeLanguage();
         }
-        
-        // Scroll Animation
+
+        // Scroll animations
         const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+            threshold: 0.15,
+            rootMargin: '0px'
         };
-        
+
         const observer = new IntersectionObserver(function(entries) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -1099,13 +1136,12 @@
                 }
             });
         }, observerOptions);
-        
-        // Initialize animations
+
         function initializeAnimations() {
             const animatedElements = document.querySelectorAll('.animate-on-scroll');
             animatedElements.forEach(el => observer.observe(el));
-            
-            // Smooth scroll
+
+            // Smooth scroll for anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     const href = this.getAttribute('href');
@@ -1122,30 +1158,12 @@
                 });
             });
         }
-        
+
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', initializeAnimations);
         } else {
             initializeAnimations();
         }
-        
-        // Parallax effect
-        let ticking = false;
-        function updateParallax() {
-            const scrolled = window.pageYOffset;
-            const parallax = document.querySelector('header');
-            if (parallax) {
-                parallax.style.transform = `translateY(${scrolled * 0.5}px)`;
-            }
-            ticking = false;
-        }
-        
-        window.addEventListener('scroll', function() {
-            if (!ticking) {
-                requestAnimationFrame(updateParallax);
-                ticking = true;
-            }
-        });
     </script>
 </body>
 </html>
