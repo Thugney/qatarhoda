@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - NordCloud Qatar | Detailed Service Specifications</title>
+    <meta name="description" content="Detailed Microsoft 365 service specifications: Intune, Autopilot, Defender XDR, Entra ID implementations with realistic timelines and deliverables.">
+
+    <link rel="canonical" href="https://nordcloud.qa/services">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        :root {
+            --bg-dark: #0A0E1A; --bg-darker: #050810; --bg-card: rgba(15, 23, 42, 0.6);
+            --neon-cyan: #00F0FF; --neon-purple: #B537FF; --neon-pink: #FF3D9A;
+            --text-primary: #FFFFFF; --text-secondary: #94A3B8; --text-muted: #64748B;
+            --glass-bg: rgba(255, 255, 255, 0.05); --glass-border: rgba(255, 255, 255, 0.1);
+            --radius-lg: 24px;
+        }
+        body {font-family: 'Space Grotesk', -apple-system, sans-serif; background: var(--bg-dark); color: var(--text-primary); line-height: 1.6;}
+        body.ar-lang {font-family: 'Tajawal', -apple-system, sans-serif; direction: rtl;}
+        .container {max-width: 1200px; margin: 0 auto; padding: 0 24px;}
+
+        .lang-en {display: initial;} .lang-ar {display: none;}
+        body.ar-lang .lang-en {display: none;} body.ar-lang .lang-ar {display: initial;}
+        h1.lang-en, h2.lang-en, h3.lang-en, h4.lang-en, p.lang-en {display: block;}
+        h1.lang-ar, h2.lang-ar, h3.lang-ar, h4.lang-ar, p.lang-ar {display: none;}
+        body.ar-lang h1.lang-en, body.ar-lang h2.lang-en, body.ar-lang h3.lang-en, body.ar-lang h4.lang-en, body.ar-lang p.lang-en {display: none;}
+        body.ar-lang h1.lang-ar, body.ar-lang h2.lang-ar, body.ar-lang h3.lang-ar, body.ar-lang h4.lang-ar, body.ar-lang p.lang-ar {display: block;}
+        a.lang-en {display: inline-block;} a.lang-ar {display: none;}
+        body.ar-lang a.lang-en {display: none;} body.ar-lang a.lang-ar {display: inline-block;}
+        li.lang-en {display: list-item;} li.lang-ar {display: none;}
+        body.ar-lang li.lang-en {display: none;} body.ar-lang li.lang-ar {display: list-item;}
+
+        nav {position: absolute; top: 24px; left: 24px;}
+        nav a {color: var(--text-secondary); text-decoration: none; padding: 10px 20px; border-radius: 50px; transition: all 0.3s ease;}
+        nav a:hover {color: var(--neon-cyan); background: var(--glass-bg);}
+
+        .lang-switch {position: fixed; top: 24px; right: 24px; z-index: 1000; background: var(--glass-bg); backdrop-filter: blur(20px); border: 1px solid var(--glass-border); padding: 10px 20px; border-radius: 50px; font-weight: 600; font-size: 0.875rem; cursor: pointer; display: flex; gap: 10px;}
+        body.ar-lang .lang-switch {right: auto; left: 24px;}
+
+        header {padding: 120px 24px 60px; text-align: center;}
+        h1 {font-size: clamp(2.5rem, 6vw, 4rem); background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 1rem;}
+        h2 {font-size: clamp(1.8rem, 4vw, 2.5rem); color: var(--text-primary); margin-bottom: 1rem;}
+        h3 {font-size: 1.5rem; color: var(--neon-cyan); margin: 32px 0 16px;}
+        h4 {font-size: 1.25rem; color: var(--text-primary); margin: 24px 0 12px;}
+        p {font-size: 1rem; color: var(--text-secondary); margin-bottom: 16px; line-height: 1.8;}
+
+        .service-card {background: var(--glass-bg); backdrop-filter: blur(20px); border: 2px solid var(--glass-border); border-radius: var(--radius-lg); padding: 48px; margin: 40px 0; transition: all 0.3s ease;}
+        .service-card:hover {border-color: var(--neon-cyan); box-shadow: 0 10px 40px rgba(0, 240, 255, 0.2);}
+
+        .price-header {display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px; flex-wrap: wrap; gap: 20px;}
+        .price-tag {font-size: 2.5rem; font-weight: 700; background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
+
+        .section-box {background: rgba(0, 0, 0, 0.3); border-left: 3px solid var(--neon-cyan); padding: 20px 24px; margin: 24px 0; border-radius: 8px;}
+        .section-box.warning {border-left-color: var(--neon-pink);}
+
+        ul {list-style: none; padding: 0;}
+        ul li {padding: 8px 0 8px 28px; position: relative;}
+        ul li::before {content: '→'; position: absolute; left: 0; color: var(--neon-cyan); font-weight: bold;}
+        body.ar-lang ul li {padding: 8px 28px 8px 0;}
+        body.ar-lang ul li::before {left: auto; right: 0; content: '←';}
+
+        .timeline {display: grid; gap: 16px; margin: 24px 0;}
+        .timeline-item {background: rgba(255, 255, 255, 0.03); border-left: 2px solid var(--neon-purple); padding: 16px 20px; border-radius: 8px;}
+        .timeline-item strong {color: var(--neon-purple);}
+
+        .btn {display: inline-block; padding: 16px 36px; border-radius: 50px; text-decoration: none; font-weight: 600; background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple)); color: var(--bg-dark); transition: all 0.3s ease;}
+        .btn:hover {transform: translateY(-4px); box-shadow: 0 10px 30px rgba(0, 240, 255, 0.4);}
+
+        .tech-stack {display: flex; flex-wrap: wrap; gap: 12px; margin: 16px 0;}
+        .tech-badge {background: rgba(181, 55, 255, 0.1); border: 1px solid var(--neon-purple); padding: 6px 16px; border-radius: 20px; font-size: 0.875rem; color: var(--text-secondary);}
+    </style>
+</head>
+<body class="en-lang">
+    <nav><a href="index.html"><span class="lang-en">← Back to Home</span><span class="lang-ar">→ العودة للصفحة الرئيسية</span></a></nav>
+    <div class="lang-switch" onclick="toggleLanguage()"><span class="switch-en active">EN</span><span>|</span><span class="switch-ar">AR</span></div>
+
+    <header>
+        <div class="container">
+            <h1 class="lang-en">Service Specifications</h1>
+            <h1 class="lang-ar">مواصفات الخدمة</h1>
+            <p class="lang-en">Detailed breakdown of deliverables, timelines, and technical scope</p>
+            <p class="lang-ar">تفصيل شامل للمخرجات والجداول الزمنية والنطاق التقني</p>
+        </div>
+    </header>
+
+    <section>
+        <div class="container">
+            <!-- SERVICE 1: Endpoint Management -->
+            <div class="service-card">
+                <div class="price-header">
+                    <div>
+                        <h2 class="lang-en">Endpoint Management Deployment Service</h2>
+                        <h2 class="lang-ar">خدمة نشر إدارة النقاط النهائية</h2>
+                        <p class="lang-en" style="color: var(--text-muted);">Microsoft Intune + Autopilot Implementation</p>
+                        <p class="lang-ar" style="color: var(--text-muted);">تنفيذ Microsoft Intune + Autopilot</p>
+                    </div>
+                    <div class="price-tag">50,000 QAR</div>
+                </div>
+
+                <h3 class="lang-en">What's Included</h3>
+                <h3 class="lang-ar">ما يشمله</h3>
+                <ul>
+                    <li class="lang-en">Autopilot deployment profile for up to 300 Windows 10/11 devices</li>
+                    <li class="lang-en">Enrollment Status Page (ESP) configuration with app deployment tracking</li>
+                    <li class="lang-en">5 compliance policies (BitLocker, Windows Defender, password, update, device health)</li>
+                    <li class="lang-en">10 configuration profiles (Wi-Fi, VPN, certificates, restrictions, email, browser settings)</li>
+                    <li class="lang-en">Application deployment setup (Win32, MSI, or LOB apps - up to 15 applications)</li>
+                    <li class="lang-en">Update rings configuration (pilot, production, delayed rings)</li>
+                    <li class="lang-en">Device enrollment restrictions and naming templates</li>
+                    <li class="lang-en">Admin training session (4 hours, bilingual)</li>
+                    <li class="lang-en">Technical documentation in Arabic + English (setup guides, troubleshooting)</li>
+                    <li class="lang-en">30-day post-deployment support (email + WhatsApp)</li>
+
+                    <li class="lang-ar">ملف تعريف نشر Autopilot لما يصل إلى 300 جهاز Windows 10/11</li>
+                    <li class="lang-ar">تكوين صفحة حالة التسجيل (ESP) مع تتبع نشر التطبيقات</li>
+                    <li class="lang-ar">5 سياسات امتثال (BitLocker، Windows Defender، كلمة المرور، التحديث، صحة الجهاز)</li>
+                    <li class="lang-ar">10 ملفات تعريف التكوين (Wi-Fi، VPN، الشهادات، القيود، البريد الإلكتروني، إعدادات المتصفح)</li>
+                    <li class="lang-ar">إعداد نشر التطبيقات (Win32، MSI، أو تطبيقات LOB - حتى 15 تطبيقاً)</li>
+                    <li class="lang-ar">تكوين حلقات التحديث (تجريبي، إنتاج، حلقات متأخرة)</li>
+                    <li class="lang-ar">قيود تسجيل الأجهزة وقوالب التسمية</li>
+                    <li class="lang-ar">جلسة تدريب للمسؤولين (4 ساعات، ثنائية اللغة)</li>
+                    <li class="lang-ar">وثائق تقنية بالعربية + الإنجليزية (أدلة الإعداد، استكشاف الأخطاء)</li>
+                    <li class="lang-ar">دعم لمدة 30 يوماً بعد النشر (بريد إلكتروني + واتساب)</li>
+                </ul>
+
+                <div class="section-box warning">
+                    <h4 class="lang-en">⚠️ What's NOT Included</h4>
+                    <h4 class="lang-ar">⚠️ ما لا يشمله</h4>
+                    <ul>
+                        <li class="lang-en">Microsoft licenses (Intune, Windows, Entra ID P1/P2) - client must provide</li>
+                        <li class="lang-en">Hardware procurement or device imaging</li>
+                        <li class="lang-en">Migration of existing Group Policy Objects (GPO) - separate service</li>
+                        <li class="lang-en">Custom PowerShell script development beyond standard configurations</li>
+                        <li class="lang-en">Third-party MDM migration or data transfer</li>
+                        <li class="lang-en">On-site support (remote only unless separately quoted)</li>
+                        <li class="lang-en">macOS or iOS/Android device management (Windows only)</li>
+
+                        <li class="lang-ar">تراخيص Microsoft (Intune، Windows، Entra ID P1/P2) - يجب على العميل توفيرها</li>
+                        <li class="lang-ar">شراء الأجهزة أو تصوير الأجهزة</li>
+                        <li class="lang-ar">ترحيل كائنات نهج المجموعة الحالية (GPO) - خدمة منفصلة</li>
+                        <li class="lang-ar">تطوير برامج PowerShell النصية المخصصة بخلاف التكوينات القياسية</li>
+                        <li class="lang-ar">ترحيل MDM الطرف الثالث أو نقل البيانات</li>
+                        <li class="lang-ar">الدعم في الموقع (عن بُعد فقط ما لم يتم تحديد سعر منفصل)</li>
+                        <li class="lang-ar">إدارة أجهزة macOS أو iOS/Android (Windows فقط)</li>
+                    </ul>
+                </div>
+
+                <h3 class="lang-en">Timeline Breakdown (30 days)</h3>
+                <h3 class="lang-ar">تفصيل الجدول الزمني (30 يوماً)</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <strong class="lang-en">Days 1-3:</strong>
+                        <strong class="lang-ar">الأيام 1-3:</strong>
+                        <span class="lang-en">Discovery & planning. Tenant audit, licensing verification, requirements gathering</span>
+                        <span class="lang-ar">الاكتشاف والتخطيط. تدقيق المستأجر، التحقق من الترخيص، جمع المتطلبات</span>
+                    </div>
+                    <div class="timeline-item">
+                        <strong class="lang-en">Days 4-10:</strong>
+                        <strong class="lang-ar">الأيام 4-10:</strong>
+                        <span class="lang-en">Autopilot & Intune configuration. Device groups, profiles, compliance policies setup</span>
+                        <span class="lang-ar">تكوين Autopilot و Intune. مجموعات الأجهزة، الملفات الشخصية، إعداد سياسات الامتثال</span>
+                    </div>
+                    <div class="timeline-item">
+                        <strong class="lang-en">Days 11-17:</strong>
+                        <strong class="lang-ar">الأيام 11-17:</strong>
+                        <span class="lang-en">Application packaging & deployment testing. Pilot group testing (10-20 devices)</span>
+                        <span class="lang-ar">تغليف التطبيقات واختبار النشر. اختبار المجموعة التجريبية (10-20 جهازاً)</span>
+                    </div>
+                    <div class="timeline-item">
+                        <strong class="lang-en">Days 18-25:</strong>
+                        <strong class="lang-ar">الأيام 18-25:</strong>
+                        <span class="lang-en">Production rollout. Phased deployment to remaining devices, issue remediation</span>
+                        <span class="lang-ar">الطرح للإنتاج. النشر المرحلي للأجهزة المتبقية، معالجة المشاكل</span>
+                    </div>
+                    <div class="timeline-item">
+                        <strong class="lang-en">Days 26-30:</strong>
+                        <strong class="lang-ar">الأيام 26-30:</strong>
+                        <span class="lang-en">Training, documentation delivery, handover. Knowledge transfer to IT team</span>
+                        <span class="lang-ar">التدريب، تسليم الوثائق، التسليم. نقل المعرفة لفريق تكنولوجيا المعلومات</span>
+                    </div>
+                </div>
+
+                <h3 class="lang-en">Prerequisites</h3>
+                <h3 class="lang-ar">المتطلبات الأساسية</h3>
+                <div class="section-box">
+                    <ul>
+                        <li class="lang-en">Active Microsoft 365 E3/E5 or equivalent licenses (must include Intune)</li>
+                        <li class="lang-en">Entra ID (Azure AD) tenant with Global Administrator access</li>
+                        <li class="lang-en">Windows 10 Pro/Enterprise (version 1903+) or Windows 11 devices</li>
+                        <li class="lang-en">Internet connectivity on all target devices</li>
+                        <li class="lang-en">Dedicated IT contact person for decision-making and testing coordination</li>
+                        <li class="lang-en">List of required applications with installation files or MSI packages</li>
+                        <li class="lang-en">Network firewall configured to allow Intune endpoints (we provide list)</li>
+
+                        <li class="lang-ar">تراخيص Microsoft 365 E3/E5 نشطة أو ما يعادلها (يجب أن تتضمن Intune)</li>
+                        <li class="lang-ar">مستأجر Entra ID (Azure AD) مع وصول مسؤول عام</li>
+                        <li class="lang-ar">أجهزة Windows 10 Pro/Enterprise (الإصدار 1903+) أو Windows 11</li>
+                        <li class="lang-ar">اتصال بالإنترنت على جميع الأجهزة المستهدفة</li>
+                        <li class="lang-ar">شخص اتصال تكنولوجيا المعلومات مخصص لاتخاذ القرارات وتنسيق الاختبار</li>
+                        <li class="lang-ar">قائمة بالتطبيقات المطلوبة مع ملفات التثبيت أو حزم MSI</li>
+                        <li class="lang-ar">جدار حماية الشبكة مُكوَّن للسماح بنقاط نهاية Intune (نوفر القائمة)</li>
+                    </ul>
+                </div>
+
+                <h3 class="lang-en">Technical Stack</h3>
+                <h3 class="lang-ar">المكدس التقني</h3>
+                <div class="tech-stack">
+                    <span class="tech-badge">Microsoft Intune</span>
+                    <span class="tech-badge">Windows Autopilot</span>
+                    <span class="tech-badge">Entra ID</span>
+                    <span class="tech-badge">Microsoft Endpoint Manager</span>
+                    <span class="tech-badge">PowerShell</span>
+                    <span class="tech-badge">Graph API</span>
+                </div>
+
+                <a href="https://wa.me/97433555043?text=Endpoint%20Management%20Service" class="btn">
+                    <span class="lang-en">Request Quote</span>
+                    <span class="lang-ar">طلب عرض أسعار</span>
+                </a>
+            </div>
+
+            <!-- SERVICE 2: Security Assessment -->
+            <div class="service-card">
+                <div class="price-header">
+                    <div>
+                        <h2 class="lang-en">Extended Security Assessment Service</h2>
+                        <h2 class="lang-ar">خدمة تقييم الأمان الموسع</h2>
+                        <p class="lang-en" style="color: var(--text-muted);">Microsoft Defender XDR + Zero Trust Review</p>
+                        <p class="lang-ar" style="color: var(--text-muted);">Microsoft Defender XDR + مراجعة Zero Trust</p>
+                    </div>
+                    <div class="price-tag">40,000 QAR</div>
+                </div>
+
+                <h3 class="lang-en">What's Included</h3>
+                <h3 class="lang-ar">ما يشمله</h3>
+                <ul>
+                    <li class="lang-en">Complete Defender XDR environment audit (Defender for Endpoint, Identity, Office 365, Cloud Apps)</li>
+                    <li class="lang-en">Security baseline assessment against CIS Microsoft 365 Foundations Benchmark</li>
+                    <li class="lang-en">Attack surface reduction (ASR) rules configuration and testing</li>
+                    <li class="lang-en">5 Conditional Access policies design and implementation</li>
+                    <li class="lang-en">Threat detection rules tuning (reduce false positives, improve detection)</li>
+                    <li class="lang-en">Incident response playbook (20 common scenarios with step-by-step procedures)</li>
+                    <li class="lang-en">Security posture scoring with remediation roadmap</li>
+                    <li class="lang-en">Automated remediation actions configuration</li>
+                    <li class="lang-en">Security alerts integration with email/Teams</li>
+                    <li class="lang-en">Comprehensive report (50+ pages) in Arabic + English with executive summary</li>
+                    <li class="lang-en">Security team training (6 hours, bilingual)</li>
+                    <li class="lang-en">90-day follow-up review session</li>
+
+                    <li class="lang-ar">تدقيق كامل لبيئة Defender XDR (Defender for Endpoint، Identity، Office 365، Cloud Apps)</li>
+                    <li class="lang-ar">تقييم خط الأساس الأمني مقابل معيار CIS Microsoft 365 Foundations Benchmark</li>
+                    <li class="lang-ar">تكوين واختبار قواعد تقليل سطح الهجوم (ASR)</li>
+                    <li class="lang-ar">تصميم وتنفيذ 5 سياسات وصول شرطي</li>
+                    <li class="lang-ar">ضبط قواعد اكتشاف التهديدات (تقليل الإيجابيات الزائفة، تحسين الكشف)</li>
+                    <li class="lang-ar">دليل الاستجابة للحوادث (20 سيناريو شائع مع إجراءات خطوة بخطوة)</li>
+                    <li class="lang-ar">تسجيل الوضع الأمني مع خارطة طريق المعالجة</li>
+                    <li class="lang-ar">تكوين إجراءات المعالجة التلقائية</li>
+                    <li class="lang-ar">تكامل تنبيهات الأمان مع البريد الإلكتروني/Teams</li>
+                    <li class="lang-ar">تقرير شامل (أكثر من 50 صفحة) بالعربية + الإنجليزية مع ملخص تنفيذي</li>
+                    <li class="lang-ar">تدريب فريق الأمان (6 ساعات، ثنائي اللغة)</li>
+                    <li class="lang-ar">جلسة مراجعة متابعة لمدة 90 يوماً</li>
+                </ul>
+
+                <div class="section-box warning">
+                    <h4 class="lang-en">⚠️ What's NOT Included</h4>
+                    <h4 class="lang-ar">⚠️ ما لا يشمله</h4>
+                    <ul>
+                        <li class="lang-en">Microsoft E5 Security licenses - client must provide (E3 + Security add-on acceptable)</li>
+                        <li class="lang-en">Active incident response or breach remediation (this is preventive only)</li>
+                        <li class="lang-en">Penetration testing or red team exercises</li>
+                        <li class="lang-en">SIEM integration (Sentinel, Splunk, QRadar) - separate service</li>
+                        <li class="lang-en">Network security assessment (firewalls, IDS/IPS)</li>
+                        <li class="lang-en">Physical security review</li>
+                        <li class="lang-en">Compliance certification assistance (ISO, SOC2, NIST) - separate engagement</li>
+                        <li class="lang-en">24/7 SOC monitoring - this is assessment only, not ongoing monitoring</li>
+
+                        <li class="lang-ar">تراخيص Microsoft E5 Security - يجب على العميل توفيرها (E3 + إضافة الأمان مقبولة)</li>
+                        <li class="lang-ar">الاستجابة النشطة للحوادث أو معالجة الاختراق (هذا وقائي فقط)</li>
+                        <li class="lang-ar">اختبار الاختراق أو تمارين الفريق الأحمر</li>
+                        <li class="lang-ar">تكامل SIEM (Sentinel، Splunk، QRadar) - خدمة منفصلة</li>
+                        <li class="lang-ar">تقييم أمان الشبكة (جدران الحماية، IDS/IPS)</li>
+                        <li class="lang-ar">مراجعة الأمان المادي</li>
+                        <li class="lang-ar">المساعدة في شهادة الامتثال (ISO، SOC2، NIST) - تعاقد منفصل</li>
+                        <li class="lang-ar">مراقبة SOC على مدار الساعة طوال أيام الأسبوع - هذا تقييم فقط، وليس مراقبة مستمرة</li>
+                    </ul>
+                </div>
+
+                <h3 class="lang-en">Timeline Breakdown (21 days)</h3>
+                <h3 class="lang-ar">تفصيل الجدول الزمني (21 يوماً)</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <strong class="lang-en">Days 1-4:</strong>
+                        <strong class="lang-ar">الأيام 1-4:</strong>
+                        <span class="lang-en">Environment discovery & data collection. Defender XDR configuration review, log analysis</span>
+                        <span class="lang-ar">اكتشاف البيئة وجمع البيانات. مراجعة تكوين Defender XDR، تحليل السجلات</span>
+                    </div>
+                    <div class="timeline-item">
+                        <strong class="lang-en">Days 5-9:</strong>
+                        <strong class="lang-ar">الأيام 5-9:</strong>
+                        <span class="lang-en">Security posture assessment. Vulnerability scanning, threat detection testing, gap analysis</span>
+                        <span class="lang-ar">تقييم الوضع الأمني. فحص الثغرات، اختبار اكتشاف التهديدات، تحليل الفجوات</span>
+                    </div>
+                    <div class="timeline-item">
+                        <strong class="lang-en">Days 10-14:</strong>
+                        <strong class="lang-ar">الأيام 10-14:</strong>
+                        <span class="lang-en">Policy implementation. Conditional Access, ASR rules, alert tuning, automation setup</span>
+                        <span class="lang-ar">تنفيذ السياسة. الوصول الشرطي، قواعد ASR، ضبط التنبيهات، إعداد الأتمتة</span>
+                    </div>
+                    <div class="timeline-item">
+                        <strong class="lang-en">Days 15-17:</strong>
+                        <strong class="lang-ar">الأيام 15-17:</strong>
+                        <span class="lang-en">Documentation & playbook creation. Incident response procedures, training materials prep</span>
+                        <span class="lang-ar">التوثيق وإنشاء الدليل. إجراءات الاستجابة للحوادث، إعداد مواد التدريب</span>
+                    </div>
+                    <div class="timeline-item">
+                        <strong class="lang-en">Days 18-21:</strong>
+                        <strong class="lang-ar">الأيام 18-21:</strong>
+                        <span class="lang-en">Training & handover. Security team training, report presentation, Q&A sessions</span>
+                        <span class="lang-ar">التدريب والتسليم. تدريب فريق الأمان، عرض التقرير، جلسات أسئلة وأجوبة</span>
+                    </div>
+                </div>
+
+                <h3 class="lang-en">Prerequisites</h3>
+                <h3 class="lang-ar">المتطلبات الأساسية</h3>
+                <div class="section-box">
+                    <ul>
+                        <li class="lang-en">Microsoft 365 E5 or E3 + E5 Security licenses</li>
+                        <li class="lang-en">Defender for Endpoint already deployed on endpoints (minimum 50 devices)</li>
+                        <li class="lang-en">Security Administrator or Global Administrator access</li>
+                        <li class="lang-en">At least 30 days of Defender logs for baseline analysis</li>
+                        <li class="lang-en">Security team point-of-contact available for workshops</li>
+                        <li class="lang-en">List of critical assets and data classification levels</li>
+
+                        <li class="lang-ar">تراخيص Microsoft 365 E5 أو E3 + E5 Security</li>
+                        <li class="lang-ar">Defender for Endpoint مُنشَر بالفعل على نقاط النهاية (50 جهازاً كحد أدنى)</li>
+                        <li class="lang-ar">وصول مسؤول الأمان أو المسؤول العام</li>
+                        <li class="lang-ar">30 يوماً على الأقل من سجلات Defender لتحليل خط الأساس</li>
+                        <li class="lang-ar">نقطة اتصال فريق الأمان متاحة لورش العمل</li>
+                        <li class="lang-ar">قائمة بالأصول الحيوية ومستويات تصنيف البيانات</li>
+                    </ul>
+                </div>
+
+                <h3 class="lang-en">Technical Stack</h3>
+                <h3 class="lang-ar">المكدس التقني</h3>
+                <div class="tech-stack">
+                    <span class="tech-badge">Defender for Endpoint</span>
+                    <span class="tech-badge">Defender for Identity</span>
+                    <span class="tech-badge">Defender for Office 365</span>
+                    <span class="tech-badge">Defender for Cloud Apps</span>
+                    <span class="tech-badge">Conditional Access</span>
+                    <span class="tech-badge">Azure AD Identity Protection</span>
+                </div>
+
+                <a href="https://wa.me/97433555043?text=Security%20Assessment%20Service" class="btn">
+                    <span class="lang-en">Request Quote</span>
+                    <span class="lang-ar">طلب عرض أسعار</span>
+                </a>
+            </div>
+
+            <!-- SERVICE 3: Identity Governance -->
+            <div class="service-card">
+                <div class="price-header">
+                    <div>
+                        <h2 class="lang-en">Identity Governance Optimization Service</h2>
+                        <h2 class="lang-ar">خدمة تحسين حوكمة الهوية</h2>
+                        <p class="lang-en" style="color: var(--text-muted);">Microsoft Entra ID Licensing & Access Management</p>
+                        <p class="lang-ar" style="color: var(--text-muted);">Microsoft Entra ID الترخيص وإدارة الوصول</p>
+                    </div>
+                    <div class="price-tag">30,000 QAR</div>
+                </div>
+
+                <h3 class="lang-en">What's Included</h3>
+                <h3 class="lang-ar">ما يشمله</h3>
+                <ul>
+                    <li class="lang-en">Complete license audit (E3, E5, F3, Business Premium, add-ons)</li>
+                    <li class="lang-en">License waste analysis with cost-saving recommendations (avg. 15-25% reduction)</li>
+                    <li class="lang-en">User and group access review (all Entra ID groups, distribution lists, M365 groups)</li>
+                    <li class="lang-en">Stale account identification and cleanup recommendations</li>
+                    <li class="lang-en">Privileged role review and RBAC optimization</li>
+                    <li class="lang-en">5 Conditional Access policies implementation (location, device, risk-based)</li>
+                    <li class="lang-en">Multi-factor authentication (MFA) rollout plan</li>
+                    <li class="lang-en">Guest user access review and governance policies</li>
+                    <li class="lang-en">Self-service password reset (SSPR) configuration</li>
+                    <li class="lang-en">License assignment automation using dynamic groups</li>
+                    <li class="lang-en">Detailed cost-benefit report in Arabic + English</li>
+                    <li class="lang-en">IT admin training (3 hours)</li>
+
+                    <li class="lang-ar">تدقيق كامل للترخيص (E3، E5، F3، Business Premium، الوظائف الإضافية)</li>
+                    <li class="lang-ar">تحليل هدر الترخيص مع توصيات توفير التكلفة (متوسط تخفيض 15-25٪)</li>
+                    <li class="lang-ar">مراجعة وصول المستخدم والمجموعة (جميع مجموعات Entra ID، قوائم التوزيع، مجموعات M365)</li>
+                    <li class="lang-ar">تحديد الحسابات القديمة وتوصيات التنظيف</li>
+                    <li class="lang-ar">مراجعة الأدوار المميزة وتحسين RBAC</li>
+                    <li class="lang-ar">تنفيذ 5 سياسات وصول شرطي (الموقع، الجهاز، على أساس المخاطر)</li>
+                    <li class="lang-ar">خطة طرح المصادقة متعددة العوامل (MFA)</li>
+                    <li class="lang-ar">مراجعة وصول المستخدم الضيف وسياسات الحوكمة</li>
+                    <li class="lang-ar">تكوين إعادة تعيين كلمة المرور الخدمة الذاتية (SSPR)</li>
+                    <li class="lang-ar">أتمتة تعيين الترخيص باستخدام المجموعات الديناميكية</li>
+                    <li class="lang-ar">تقرير تكلفة وفائدة مفصل بالعربية + الإنجليزية</li>
+                    <li class="lang-ar">تدريب مسؤول تكنولوجيا المعلومات (3 ساعات)</li>
+                </ul>
+
+                <div class="section-box warning">
+                    <h4 class="lang-en">⚠️ What's NOT Included</h4>
+                    <h4 class="lang-ar">⚠️ ما لا يشمله</h4>
+                    <ul>
+                        <li class="lang-en">Actual license purchases or renewals (we provide recommendations only)</li>
+                        <li class="lang-en">Entra ID Premium P1/P2 licenses (required for some features)</li>
+                        <li class="lang-en">Privileged Identity Management (PIM) implementation - separate service</li>
+                        <li class="lang-en">Identity Protection automated response - separate engagement</li>
+                        <li class="lang-en">Custom app integration with Entra ID (SAML, OAuth)</li>
+                        <li class="lang-en">On-premises Active Directory integration or hybrid setup</li>
+                        <li class="lang-en">User migration or bulk provisioning (cloud-only tenants)</li>
+
+                        <li class="lang-ar">عمليات الشراء الفعلية للترخيص أو التجديدات (نوفر التوصيات فقط)</li>
+                        <li class="lang-ar">تراخيص Entra ID Premium P1/P2 (مطلوبة لبعض الميزات)</li>
+                        <li class="lang-ar">تنفيذ إدارة الهوية المميزة (PIM) - خدمة منفصلة</li>
+                        <li class="lang-ar">الاستجابة التلقائية لحماية الهوية - تعاقد منفصل</li>
+                        <li class="lang-ar">تكامل التطبيق المخصص مع Entra ID (SAML، OAuth)</li>
+                        <li class="lang-ar">تكامل Active Directory في الموقع أو الإعداد المختلط</li>
+                        <li class="lang-ar">ترحيل المستخدم أو التوفير بالجملة (مستأجرو السحابة فقط)</li>
+                    </ul>
+                </div>
+
+                <h3 class="lang-en">Timeline Breakdown (14 days)</h3>
+                <h3 class="lang-ar">تفصيل الجدول الزمني (14 يوماً)</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <strong class="lang-en">Days 1-3:</strong>
+                        <strong class="lang-ar">الأيام 1-3:</strong>
+                        <span class="lang-en">License and access discovery. Export all users, groups, licenses, permissions</span>
+                        <span class="lang-ar">اكتشاف الترخيص والوصول. تصدير جميع المستخدمين والمجموعات والتراخيص والأذونات</span>
+                    </div>
+                    <div class="timeline-item">
+                        <strong class="lang-en">Days 4-6:</strong>
+                        <strong class="lang-ar">الأيام 4-6:</strong>
+                        <span class="lang-en">Analysis & optimization planning. Identify waste, unused licenses, over-privileged accounts</span>
+                        <span class="lang-ar">التحليل والتخطيط للتحسين. تحديد الهدر والتراخيص غير المستخدمة والحسابات ذات الامتيازات المفرطة</span>
+                    </div>
+                    <div class="timeline-item">
+                        <strong class="lang-en">Days 7-10:</strong>
+                        <strong class="lang-ar">الأيام 7-10:</strong>
+                        <span class="lang-en">Implementation. Conditional Access policies, MFA rollout, SSPR, group cleanup</span>
+                        <span class="lang-ar">التنفيذ. سياسات الوصول الشرطي، طرح MFA، SSPR، تنظيف المجموعات</span>
+                    </div>
+                    <div class="timeline-item">
+                        <strong class="lang-en">Days 11-14:</strong>
+                        <strong class="lang-ar">الأيام 11-14:</strong>
+                        <span class="lang-en">Reporting & training. Deliver cost report, training session, optimization roadmap</span>
+                        <span class="lang-ar">إعداد التقارير والتدريب. تقديم تقرير التكلفة، جلسة التدريب، خارطة طريق التحسين</span>
+                    </div>
+                </div>
+
+                <h3 class="lang-en">Prerequisites</h3>
+                <h3 class="lang-ar">المتطلبات الأساسية</h3>
+                <div class="section-box">
+                    <ul>
+                        <li class="lang-en">Microsoft 365 tenant (minimum 50 users)</li>
+                        <li class="lang-en">Global Administrator or User Administrator access</li>
+                        <li class="lang-en">License Administrator role (for license analysis)</li>
+                        <li class="lang-en">Existing license purchase records/invoices for cost comparison</li>
+                        <li class="lang-en">HR or department organizational structure data (for group alignment)</li>
+
+                        <li class="lang-ar">مستأجر Microsoft 365 (50 مستخدماً كحد أدنى)</li>
+                        <li class="lang-ar">وصول المسؤول العام أو مسؤول المستخدم</li>
+                        <li class="lang-ar">دور مسؤول الترخيص (لتحليل الترخيص)</li>
+                        <li class="lang-ar">سجلات/فواتير شراء الترخيص الحالية لمقارنة التكلفة</li>
+                        <li class="lang-ar">بيانات الهيكل التنظيمي للموارد البشرية أو القسم (لمواءمة المجموعات)</li>
+                    </ul>
+                </div>
+
+                <h3 class="lang-en">Expected Outcomes</h3>
+                <h3 class="lang-ar">النتائج المتوقعة</h3>
+                <div class="section-box">
+                    <ul>
+                        <li class="lang-en"><strong>License savings:</strong> Average 15-25% cost reduction through optimization</li>
+                        <li class="lang-en"><strong>Security improvement:</strong> MFA coverage increase to 95%+</li>
+                        <li class="lang-en"><strong>Access cleanup:</strong> Remove 20-40% of stale/unused accounts</li>
+                        <li class="lang-en"><strong>Governance:</strong> Clear RBAC structure with documented approval workflows</li>
+
+                        <li class="lang-ar"><strong>توفير الترخيص:</strong> متوسط خفض التكلفة 15-25٪ من خلال التحسين</li>
+                        <li class="lang-ar"><strong>تحسين الأمان:</strong> زيادة تغطية MFA إلى أكثر من 95٪</li>
+                        <li class="lang-ar"><strong>تنظيف الوصول:</strong> إزالة 20-40٪ من الحسابات القديمة/غير المستخدمة</li>
+                        <li class="lang-ar"><strong>الحوكمة:</strong> هيكل RBAC واضح مع سير عمل الموافقة الموثق</li>
+                    </ul>
+                </div>
+
+                <h3 class="lang-en">Technical Stack</h3>
+                <h3 class="lang-ar">المكدس التقني</h3>
+                <div class="tech-stack">
+                    <span class="tech-badge">Microsoft Entra ID</span>
+                    <span class="tech-badge">Conditional Access</span>
+                    <span class="tech-badge">MFA</span>
+                    <span class="tech-badge">SSPR</span>
+                    <span class="tech-badge">Dynamic Groups</span>
+                    <span class="tech-badge">PowerShell</span>
+                    <span class="tech-badge">Graph API</span>
+                </div>
+
+                <a href="https://wa.me/97433555043?text=Identity%20Governance%20Service" class="btn">
+                    <span class="lang-en">Request Quote</span>
+                    <span class="lang-ar">طلب عرض أسعار</span>
+                </a>
+            </div>
+
+            <!-- General Contact -->
+            <div style="text-align: center; margin: 60px 0;">
+                <h2 class="lang-en">Need Something Custom?</h2>
+                <h2 class="lang-ar">هل تحتاج إلى شيء مخصص؟</h2>
+                <p class="lang-en" style="max-width: 600px; margin: 20px auto;">
+                    These packages can be combined or customized based on your specific requirements. Contact us for a tailored proposal.
+                </p>
+                <p class="lang-ar" style="max-width: 600px; margin: 20px auto;">
+                    يمكن دمج هذه الباقات أو تخصيصها بناءً على متطلباتك المحددة. اتصل بنا للحصول على اقتراح مخصص.
+                </p>
+                <a href="contact.html" class="btn" style="margin-top: 20px;">
+                    <span class="lang-en">Contact Us</span>
+                    <span class="lang-ar">اتصل بنا</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function toggleLanguage() {
+            const body = document.body;
+            const isArabic = body.classList.contains('ar-lang');
+            if (isArabic) {
+                body.classList.remove('ar-lang'); body.classList.add('en-lang');
+                document.querySelector('.switch-en').classList.add('active');
+                document.querySelector('.switch-ar').classList.remove('active');
+            } else {
+                body.classList.add('ar-lang'); body.classList.remove('en-lang');
+                document.querySelector('.switch-ar').classList.add('active');
+                document.querySelector('.switch-en').classList.remove('active');
+            }
+        }
+    </script>
+</body>
+</html>
